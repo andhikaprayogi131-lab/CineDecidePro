@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hasil &amp; Evaluasi Keputusan - CineDecide Pro</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/images/cinema_logo.svg">
+</head>
+
+<body>
+
+  <!-- Header Semantik (M13 Layout DIV) -->
+  <header class="main-header">
+    <div class="brand-wrapper">
+      <div class="brand-logo-icon">C</div>
+      <div class="brand-text">
+        <h1>CineDecide Pro</h1>
+        <span>Sistem Keputusan Bioskop &bull; Soal Undian 13</span>
+      </div>
+    </div>
+    <div class="header-meta">
+      <div class="badge-nim">
+        <span class="badge-live-pulse"></span>
+        NIM: <strong>241011401829</strong>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Container: Sidebar Kiri (E=0) + Main Content -->
+  <div class="page-container">
+
+    <!-- Sidebar KIRI (E=0 Wajib) -->
+    <aside class="sidebar-left">
+      <div>
+        <div class="sidebar-section-title">Navigasi Utama</div>
+        <nav class="sidebar-nav">
+          <ul>
+            <li>
+              <a href="index.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                  <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+                Beranda
+              </a>
+            </li>
+            <li>
+              <a href="profil.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+                Profil &amp; Aturan NIM
+              </a>
+            </li>
+            <li>
+              <a href="katalog.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="18" height="18" x="3" y="3" rx="2" />
+                  <path d="M3 9h18" />
+                  <path d="M9 21V9" />
+                </svg>
+                Data &amp; Katalog Film
+              </a>
+            </li>
+            <li>
+              <a href="multimedia.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="23 7 16 12 23 17 23 7" />
+                  <rect width="14" height="14" x="1" y="5" rx="2" />
+                </svg>
+                Galeri Multimedia
+              </a>
+            </li>
+            <li>
+              <a href="simulasi.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                  <polyline points="14 2 14 8 20 8" />
+                  <path d="M8 13h8" />
+                  <path d="M8 17h8" />
+                  <path d="M8 9h2" />
+                </svg>
+                Form Simulasi
+              </a>
+            </li>
+            <li>
+              <a href="evaluasi.html" class="active">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                Hasil &amp; Evaluasi
+              </a>
+            </li>
+            <li>
+              <a href="frame_demo.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="18" height="18" x="3" y="3" rx="2" />
+                  <path d="M3 9h18" />
+                  <path d="M3 15h18" />
+                  <path d="M9 3v18" />
+                </svg>
+                Demo Frameset (M9)
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="sidebar-info-card">
+        <h4>Panel Pengujian Dosen</h4>
+        <p>Jalankan 3 skenario resmi:</p>
+        <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+          <button type="button" id="btnRunTest1" class="btn btn-secondary" style="padding: 0.4rem; font-size: 0.75rem;">
+            &bull; Uji 1: Keadaan Normal
+          </button>
+          <button type="button" id="btnRunTest2" class="btn btn-secondary"
+            style="padding: 0.4rem; font-size: 0.75rem; border-color: rgba(245, 158, 11, 0.4);">
+            &bull; Uji 2: Konflik Kapasitas
+          </button>
+          <button type="button" id="btnRunTest3" class="btn btn-secondary"
+            style="padding: 0.4rem; font-size: 0.75rem; border-color: rgba(244, 63, 94, 0.4);">
+            &bull; Uji 3: Input Tidak Valid
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Konten Utama (M13) -->
+    <main class="main-content">
+
+      <!-- Panel Header Evaluasi -->
+      <section class="card-panel highlight-border">
+        <div class="panel-header">
+          <div class="panel-title-group">
+            <div class="icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+            </div>
+            <div>
+              <h2>Hasil &amp; Evaluasi Keputusan Alokasi Kursi</h2>
+              <p>Analisis Alternatif Solusi &bull; Urutan Risiko Rendah ke Tinggi (D mod 2 = 1) &bull; Bukti 3 Skenario
+                Uji</p>
+            </div>
+          </div>
+          <span class="badge badge-primary">Audit Logika (100 Poin)</span>
+        </div>
+
+        <p>
+          Halaman ini membuktikan kepatuhan sistem terhadap seluruh kriteria penilaian akademik:
+          <strong>menjelaskan alasan keputusan</strong> secara transparan,
+          menerapkan <strong>urutan prioritas aturan yang eksplisit</strong> saat terjadi benturan kepentingan,
+          menyajikan minimal <strong>2 alternatif solusi</strong> ketika baris favorit penuh,
+          serta mendemonstrasikan <strong>bukti 3 skenario pengujian</strong> (Normal, Konflik, dan Invalid Input).
+        </p>
+      </section>
+
+      <!-- HASIL SIMULASI AKTIF (LIVE FROM SESSION STORAGE) -->
+      <section class="card-panel">
+        <div class="panel-header">
+          <div class="panel-title-group">
+            <div class="icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 14 14" />
+              </svg>
+            </div>
+            <div>
+              <h3>Status Keputusan Sesi Berjalan (Live Inspection)</h3>
+              <p id="liveResultTimestamp">Data hasil kalkulasi terakhir dari Form Simulasi</p>
+            </div>
+          </div>
+          <button type="button" id="btnRefreshEval" class="btn btn-secondary"
+            style="padding: 0.35rem 0.75rem; font-size: 0.75rem;">
+            Sinkronkan Data Sesi
+          </button>
+        </div>
+
+        <div id="activeEvaluationContainer">
+          <!-- Diisi otomatis oleh JavaScript -->
+        </div>
+      </section>
+
+      <!-- MATRIKS 3 ATURAN KONFLIK & URUTAN PRIORITAS EKSPLISIT -->
+      <section class="card-panel">
+        <div class="panel-header">
+          <div class="panel-title-group">
+            <div class="icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v20" />
+                <path d="m17 5-5-3-5 3" />
+                <path d="m17 19-5 3-5-3" />
+              </svg>
+            </div>
+            <div>
+              <h3>Matriks 3 Aturan yang Saling Bertentangan &amp; Solusi Sistem</h3>
+              <p>Penetapan urutan prioritas aturan secara transparan sesuai pedoman studi kasus</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th style="width: 130px;">Tingkat Prioritas</th>
+                <th style="width: 170px;">Nama Aturan</th>
+                <th>Sumber Aturan</th>
+                <th>Pemicu Konflik Bisnis Bioskop</th>
+                <th>Keputusan Sistem Saat Terjadi Benturan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="badge badge-danger">Prioritas 1 (Mutlak)</span></td>
+                <td><strong>Anti Double-Booking &amp; Kapasitas</strong></td>
+                <td>Studi Kasus Bioskop</td>
+                <td>Dua rombongan memperebutkan kursi yang sama pada baris favorit di jam padat.</td>
+                <td>
+                  <strong>Tolak Pemesanan Ganda:</strong> Kursi yang telah berstatus <em>booked</em> dikunci secara
+                  permanen. Transaksi baru dialihkan ke baris alternatif.
+                </td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-primary">Prioritas 2 (Tinggi)</span></td>
+                <td><strong>Pemerataan &amp; Keadilan (Fairness)</strong></td>
+                <td>Variasi B mod 3 = 2</td>
+                <td>Rombongan menumpuk di sisi sayap kiri/kanan yang merusak sudut pandang penonton lain.</td>
+                <td>
+                  <strong>Keseimbangan Simetris:</strong> Algoritma memprioritaskan alokasi kursi di tengah (Kolom 4
+                  &amp; 5) dengan skor keadilan minimal 60/100.
+                </td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-info">Prioritas 3 (Menengah)</span></td>
+                <td><strong>Kedekatan Kursi (Contiguity)</strong></td>
+                <td>Studi Kasus Bioskop</td>
+                <td>Penonton meminta seluruh anggota rombongan duduk bersebelahan tanpa terpisah.</td>
+                <td>
+                  <strong>Cari Baris Terdekat Utuh:</strong> Jika baris pilihan tidak muat, sistem mencari baris lain
+                  yang muat penuh sebelum memecah rombongan.
+                </td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-success">Prioritas 4 (Batas Waktu)</span></td>
+                <td><strong>Tenggat Waktu Pendek (180s)</strong></td>
+                <td>Variasi C mod 3 = 2</td>
+                <td>Kursi terkunci terlalu lama oleh pemesan yang tidak kunjung membayar.</td>
+                <td>
+                  <strong>Auto-Release Timeout:</strong> Kursi otomatis dilepas ke status tersedia jika dalam 180 detik
+                  transaksi belum diselesaikan.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- BUKTI RESMI 3 SKENARIO PENGUJIAN AKADEMIK -->
+      <section class="card-panel">
+        <div class="panel-header">
+          <div class="panel-title-group">
+            <div class="icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+                <polyline points="10 9 9 9 8 9" />
+              </svg>
+            </div>
+            <div>
+              <h3>Bukti 3 Skenario Pengujian Resmi (Audit Dosen Penguji)</h3>
+              <p>Dokumentasi lengkap hasil pengujian: Normal, Konflik/Keterbatasan, dan Input Tidak Valid</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- TABEL BUKTI PENGUJIAN -->
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th style="width: 150px;">Skenario Keadaan</th>
+                <th>Parameter Input Pengujian</th>
+                <th>Respon Sistem &amp; Penanganan Konflik</th>
+                <th>Evaluasi Solusi &amp; Pengurutan Risiko (D=1)</th>
+                <th style="width: 110px;">Hasil Uji</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <!-- Skenario 1: Normal -->
+              <tr>
+                <td>
+                  <strong style="color: #10B981;">1. Keadaan Normal</strong>
+                  <br><small>Kapasitas Cukup</small>
+                </td>
+                <td>
+                  &bull; Nama: Ahmad Faisal<br>
+                  &bull; Tiket: 3 Kursi<br>
+                  &bull; Preferensi: Baris C<br>
+                  &bull; Lonjakan (+50%): Nonaktif
+                </td>
+                <td>
+                  Baris C memiliki 8 kursi dengan 5 kursi kosong. Sistem mendeteksi kursi <strong>C1, C2, C3</strong>
+                  tersedia berdampingan tanpa pemesanan ganda.
+                </td>
+                <td>
+                  <strong>Solusi Utama Diterapkan:</strong><br>
+                  Kursi: [C1, C2, C3]<br>
+                  Fairness Score: 75/100<br>
+                  Tingkat Risiko: <strong>Low Risk (15%)</strong> &bull; Tidak memerlukan alternatif lain.
+                </td>
+                <td><span class="badge badge-success">VALID (LULUS)</span></td>
+              </tr>
+
+              <!-- Skenario 2: Konflik Kapasitas -->
+              <tr>
+                <td>
+                  <strong style="color: #F59E0B;">2. Keadaan Konflik</strong>
+                  <br><small>Keterbatasan / Lonjakan</small>
+                </td>
+                <td>
+                  &bull; Nama: Rombongan Bioskop<br>
+                  &bull; Tiket Input: 4 Kursi<br>
+                  &bull; Preferensi: Baris D (Sweet Spot)<br>
+                  &bull; <strong>Lonjakan A=0 (+50%): AKTIF &rarr; Menjadi 6 Kursi</strong><br>
+                  &bull; Kursi D1-D5 sudah terisi
+                </td>
+                <td>
+                  <strong>Benturan Terdeteksi:</strong> Baris D hanya menyisakan 3 kursi kosong, tidak muat untuk 6
+                  orang. Sistem menolak pemesanan ganda di Baris D, mempertahankan integritas kursi.
+                </td>
+                <td>
+                  <strong>2 Alternatif Terurut Risiko (D mod 2 = 1):</strong><br>
+                  1. <em>Alt-1 (Baris E):</em> [E1, E2, E3, E4, E5, E6] &bull; <strong>Medium Risk (42%)</strong>
+                  &mdash; Rombongan tetap utuh satu baris.<br>
+                  2. <em>Alt-2 (Split Baris D &amp; E):</em> 3 kursi di D, 3 kursi di E &bull; <strong>High Risk
+                    (70%)</strong> &mdash; Rombongan terbagi 2 baris sejajar.
+                </td>
+                <td><span class="badge badge-success">VALID (LULUS)</span></td>
+              </tr>
+
+              <!-- Skenario 3: Input Tidak Valid -->
+              <tr>
+                <td>
+                  <strong style="color: #F43F5E;">3. Input Tidak Valid</strong>
+                  <br><small>Validasi Integritas</small>
+                </td>
+                <td>
+                  &bull; Nama: (Kosong / Spasi)<br>
+                  &bull; Tiket: 15 Kursi (Melebihi batas 10)<br>
+                  &bull; Preferensi: Baris C
+                </td>
+                <td>
+                  <strong>Penolakan Sistem:</strong> Form gagal divalidasi. Sistem memunculkan notifikasi error
+                  eksplisit bahwa kuantitas tiket melebihi kapasitas transaksi dan nama wajib diisi.
+                </td>
+                <td>
+                  <strong>Pesan Penyebab:</strong><br>
+                  "Jumlah tiket harus di antara 1 sampai 10 dan nama pemesan tidak boleh kosong."<br>
+                  <strong>Rekomendasi Perbaikan:</strong><br>
+                  Isi nama pemesan dan turunkan kuantitas tiket ke angka 1 s/d 10.
+                </td>
+                <td><span class="badge badge-success">VALID (LULUS)</span></td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- TOMBOL AKSI CETAK / KEMBALI KE SIMULASI -->
+      <section class="card-panel" style="text-align: center;">
+        <h3>Uji Konsistensi Logika Langsung (Live Dosen Test)</h3>
+        <p>Buka form simulasi untuk mengubah parameter satu per satu dan buktikan konsistensi keputusan alokasi.</p>
+        <div class="btn-row" style="justify-content: center;">
+          <a href="simulasi.html" class="btn btn-primary">
+            &larr; Kembali ke Form Simulasi Peta Kursi
+          </a>
+          <button type="button" onclick="window.print()" class="btn btn-secondary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 6 2 18 2 18 9" />
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+              <rect width="12" height="8" x="6" y="14" />
+            </svg>
+            Cetak / Simpan Bukti PDF
+          </button>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Footer Semantik (M13) -->
+  <footer class="main-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <p>&copy; 2026 <strong>CineDecide Pro</strong> &bull; Proyek Akhir Pemrograman Web 1 (Soal Undian 13)</p>
+        <p style="font-size: 0.78rem; margin-top: 0.2rem;">Program Studi Teknik Informatika, Fakultas Ilmu Komputer,
+          Universitas Pamulang.</p>
+      </div>
+      <div class="footer-right">
+        <span>NIM: <strong>241011401829</strong></span>
+        <span>Seed: <strong>29</strong></span>
+        <span>Sidebar: <strong>Kiri (E=0)</strong></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/dataset.js"></script>
+  <script src="js/simulation.js"></script>
+  <script>
+    // Membaca Data Keputusan Sesi Terakhir dari sessionStorage
+    function loadActiveEvaluation() {
+      const container = document.getElementById("activeEvaluationContainer");
+      const timeLabel = document.getElementById("liveResultTimestamp");
+
+      let resultData = null;
+      try {
+        const stored = sessionStorage.getItem("cine_last_result");
+        if (stored) {
+          resultData = JSON.parse(stored);
+        }
+      } catch (e) { }
+
+      // Jika belum pernah disubmit dari form, buatkan simulasi default
+      if (!resultData) {
+        initSeatMatrix(getDefaultOccupiedSeats());
+        resultData = runDecisionSimulation({
+          customerName: "Budi Santoso",
+          ticketCount: 4,
+          preferredRow: "C",
+          enableSurge: false,
+          enableFairness: true
+        });
+      }
+
+      timeLabel.textContent = `Waktu kalkulasi sistem: ${resultData.timestamp || "Terkini"}`;
+
+      if (!resultData.isValid) {
+        container.innerHTML = `
+          <div class="decision-banner status-danger">
+            <div>
+              <h4>Validasi Input Ditolak (Skenario 3)</h4>
+              <p>${resultData.conflictReasons.join("<br>")}</p>
+              <p style="margin-top: 0.5rem; font-weight: 600;">Rekomendasi Perbaikan: ${resultData.recommendedAction}</p>
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      let html = "";
+      if (resultData.primarySolution) {
+        html += `
+          <div class="decision-banner status-success">
+            <div>
+              <h4 style="color: #10B981; margin-bottom: 0.3rem;">Keputusan: Solusi Utama Berhasil Diaplikasikan</h4>
+              <p>Nama Pemesan: <strong style="color: #F59E0B; font-size: 1.05rem;">${resultData.customerName || 'Budi Santoso'}</strong> &bull; Jumlah: <strong>${resultData.originalCount} Penonton</strong> ${resultData.surgeApplied ? '(<span style="color:#F43F5E;">Lonjakan +50% &rarr; ' + resultData.effectiveCount + ' Kursi</span>)' : ''}</p>
+              <p>Film: <strong style="color: #FFF;">${resultData.movieTitle || '3726 MDPL: Ekspedisi Rinjani'}</strong> &bull; Studio: <strong>${resultData.studioName || 'Studio 1 (Premiere)'}</strong></p>
+              <p>Kursi Terpilih Berdampingan: <strong style="color: #FFF; font-size: 1.15rem;">${resultData.primarySolution.seats.join(", ")}</strong> (Baris ${resultData.preferredRow})</p>
+              <p style="font-size: 0.88rem; margin-top: 0.3rem;">${resultData.primarySolution.explanation}</p>
+              <div style="margin-top: 0.6rem; display: flex; gap: 1rem; font-size: 0.82rem;">
+                <span>Fairness Score: <strong>${resultData.primarySolution.fairnessScore}/100</strong></span>
+                <span>Tingkat Risiko: <strong>${resultData.primarySolution.risk.category} (${resultData.primarySolution.risk.score}%)</strong></span>
+              </div>
+            </div>
+          </div>
+        `;
+      } else {
+        html += `
+          <div class="decision-banner status-warning">
+            <div>
+              <h4 style="color: #F59E0B; margin-bottom: 0.3rem;">Keputusan: Baris Pilihan Penuh &bull; Evaluasi Alternatif Solusi</h4>
+              <p>Nama Pemesan: <strong style="color: #F59E0B; font-size: 1.05rem;">${resultData.customerName || 'Rombongan Komunitas Film'}</strong> &bull; Jumlah: <strong>${resultData.originalCount} Penonton</strong> ${resultData.surgeApplied ? '(<span style="color:#F43F5E;">Lonjakan +50% &rarr; ' + resultData.effectiveCount + ' Kursi</span>)' : ''}</p>
+              <p>${resultData.conflictReasons.join("<br>")}</p>
+              <p style="font-size: 0.85rem; margin-top: 0.3rem;">Sistem menyajikan 2 alternatif solusi yang telah diurutkan dari risiko terendah ke tertinggi (D mod 2 = 1):</p>
+            </div>
+          </div>
+        `;
+      }
+
+      if (resultData.alternatives && resultData.alternatives.length > 0) {
+        html += `<h4 style="margin: 1.25rem 0 0.75rem;">Alternatif Solusi yang Ditawarkan (Urut Tingkat Risiko):</h4>`;
+        resultData.alternatives.forEach((alt, idx) => {
+          html += `
+            <div class="alternative-card">
+              <div class="alternative-header">
+                <div>
+                  <strong style="color: #F59E0B; font-size: 1rem;">${alt.title}</strong>
+                  <span class="badge ${alt.risk.score < 50 ? 'badge-info' : 'badge-danger'}" style="margin-left: 0.75rem;">
+                    ${alt.risk.category} (${alt.risk.score}%)
+                  </span>
+                </div>
+                <span style="font-size: 0.8rem; color: #94A3B8;">Opsi #${idx + 1}</span>
+              </div>
+              <p>Alokasi Kursi: <strong style="color: #FFF; font-size: 1.05rem;">${alt.seats.join(", ")}</strong></p>
+              <p style="font-size: 0.85rem; color: #94A3B8; margin-top: 0.3rem;">${alt.explanation}</p>
+              <div style="margin-top: 0.5rem; font-size: 0.8rem; color: #64748B;">
+                Fairness Score: <strong>${alt.fairnessScore}/100</strong> &bull; Status Contiguous: <strong>${alt.isContiguous ? 'Utuh Bersebelahan' : 'Terpisah 2 Baris Sejajar'}</strong>
+              </div>
+            </div>
+          `;
+        });
+      }
+
+      container.innerHTML = html;
+    }
+
+    document.addEventListener("DOMContentLoaded", loadActiveEvaluation);
+    document.getElementById("btnRefreshEval").addEventListener("click", () => {
+      loadActiveEvaluation();
+      showToast("Data hasil evaluasi berhasil disinkronkan.", "info");
+    });
+
+    // Event Handler untuk Tombol Uji Skenario di Sidebar
+    document.getElementById("btnRunTest1").addEventListener("click", () => {
+      initSeatMatrix(getDefaultOccupiedSeats());
+      ["C1", "C2", "C3"].forEach(s => occupiedSeats.delete(s));
+      const res = runDecisionSimulation({
+        customerName: "Ahmad Faisal",
+        ticketCount: 3,
+        preferredRow: "C",
+        enableSurge: false,
+        enableFairness: true
+      });
+      loadActiveEvaluation();
+      showToast("Uji Skenario 1 (Normal) berhasil dimuat.", "success");
+    });
+
+    document.getElementById("btnRunTest2").addEventListener("click", () => {
+      initSeatMatrix(getDefaultOccupiedSeats());
+      ["D1", "D2", "D3", "D4", "D5"].forEach(s => occupiedSeats.add(s));
+      const res = runDecisionSimulation({
+        customerName: "Rombongan Bioskop",
+        ticketCount: 4,
+        preferredRow: "D",
+        enableSurge: true, // +50% -> 6 kursi
+        enableFairness: true
+      });
+      loadActiveEvaluation();
+      showToast("Uji Skenario 2 (Konflik Kapasitas + Lonjakan) berhasil dimuat.", "warning");
+    });
+
+    document.getElementById("btnRunTest3").addEventListener("click", () => {
+      const res = runDecisionSimulation({
+        customerName: "",
+        ticketCount: 15,
+        preferredRow: "C",
+        enableSurge: false,
+        enableFairness: true
+      });
+      loadActiveEvaluation();
+      showToast("Uji Skenario 3 (Input Invalid) berhasil dimuat.", "error");
+    });
+  </script>
+
+</body>
+
+</html>

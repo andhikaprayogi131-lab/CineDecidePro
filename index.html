@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineDecide Pro - Beranda | Proyek Akhir Pemrograman Web 1</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/images/cinema_logo.svg">
+</head>
+<body>
+
+  <!-- Header Semantik (M13 Layout DIV) -->
+  <header class="main-header">
+    <div class="brand-wrapper">
+      <div class="brand-logo-icon">C</div>
+      <div class="brand-text">
+        <h1>CineDecide Pro</h1>
+        <span>Sistem Keputusan Bioskop &bull; Soal Undian 13</span>
+      </div>
+    </div>
+    <div class="header-meta">
+      <div class="badge-nim">
+        <span class="badge-live-pulse"></span>
+        NIM: <strong>241011401829</strong>
+      </div>
+    </div>
+  </header>
+
+  <!-- Container Halaman: Sidebar Kiri (E mod 2 = 0) + Konten Utama -->
+  <div class="page-container">
+    
+    <!-- Sidebar KIRI (E=0 Wajib) -->
+    <aside class="sidebar-left">
+      <div>
+        <div class="sidebar-section-title">Navigasi Utama</div>
+        <nav class="sidebar-nav">
+          <ul>
+            <li>
+              <a href="index.html" class="active">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                Beranda
+              </a>
+            </li>
+            <li>
+              <a href="profil.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                Profil &amp; Aturan NIM
+              </a>
+            </li>
+            <li>
+              <a href="katalog.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                Data &amp; Katalog Film
+              </a>
+            </li>
+            <li>
+              <a href="multimedia.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect width="14" height="14" x="1" y="5" rx="2"/></svg>
+                Galeri Multimedia
+              </a>
+            </li>
+            <li>
+              <a href="simulasi.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M8 13h8"/><path d="M8 17h8"/><path d="M8 9h2"/></svg>
+                Form Simulasi
+              </a>
+            </li>
+            <li>
+              <a href="evaluasi.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                Hasil &amp; Evaluasi
+              </a>
+            </li>
+            <li>
+              <a href="frame_demo.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/></svg>
+                Demo Frameset (M9)
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Quick Anchor Navigation (M5 Anchor) -->
+      <div>
+        <div class="sidebar-section-title">Akses Cepat (Anchor)</div>
+        <nav class="sidebar-nav">
+          <ul>
+            <li><a href="#tentang-aplikasi">&rarr; Tentang Aplikasi</a></li>
+            <li><a href="#fitur-unggulan">&rarr; Fitur Unggulan</a></li>
+            <li><a href="#glosarium-bioskop">&rarr; Glosarium Istilah</a></li>
+            <li><a href="#tautan-akademik">&rarr; Tautan Akademik</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Card Parameter NIM di Sidebar -->
+      <div class="sidebar-info-card">
+        <h4>Variasi NIM: 241011401829</h4>
+        <p>Parameter Soal Undian 13</p>
+        <div class="meta-pill-list">
+          <div class="meta-pill"><span>A mod 3 = 0</span><span>Lonjakan (+50%)</span></div>
+          <div class="meta-pill"><span>B mod 3 = 2</span><span>Fairness/Keadilan</span></div>
+          <div class="meta-pill"><span>C mod 3 = 2</span><span>Tenggat 180s</span></div>
+          <div class="meta-pill"><span>D mod 2 = 1</span><span>Urut Risiko</span></div>
+          <div class="meta-pill"><span>E mod 2 = 0</span><span>Sidebar Kiri</span></div>
+          <div class="meta-pill"><span>Seed (2 Digit)</span><span>29 (Rp 49.500)</span></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Konten Utama (M13 Layout DIV) -->
+    <main class="main-content">
+      
+      <!-- Hero Welcome Panel -->
+      <section class="card-panel highlight-border" id="tentang-aplikasi">
+        <div class="panel-header">
+          <div class="panel-title-group">
+            <div class="icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <div>
+              <h2>Selamat Datang di CineDecide Pro &trade;</h2>
+              <p>Simulator Keputusan Alokasi Kursi Bioskop Berbasis Web Murni (HTML5, CSS3, JavaScript Vanilla)</p>
+            </div>
+          </div>
+          <span class="badge badge-primary">Universitas Pamulang</span>
+        </div>
+
+        <p>
+          <strong>CineDecide Pro</strong> adalah aplikasi simulasi sistem pendukung keputusan untuk bidang operasional bioskop modern. 
+          Dirancang khusus untuk memenuhi standar <strong>Proyek Akhir Pemrograman Web 1 (Soal Undian 13)</strong> di Program Studi Teknik Informatika, 
+          Universitas Pamulang, dengan basis perhitungan variasi <em>NIM Mahasiswa: 241011401829</em>.
+        </p>
+
+        <p>
+          Sistem ini bukan sekadar formulir pemesanan statis. Menggunakan algoritma in-memory yang tangguh, sistem secara aktif:
+          <strong>mencegah pemesanan ganda (<em>anti double-booking</em>)</strong>, 
+          menawarkan <strong>kelompok kursi berdekatan (<em>contiguous seat grouping</em>)</strong>, 
+          menyelesaikan <strong>3 aturan konflik bisnis</strong>, serta menyajikan minimal 
+          <strong>2 alternatif solusi cerdas</strong> yang diurutkan berdasarkan <strong>tingkat risiko alokasi</strong>.
+        </p>
+
+        <div class="btn-row">
+          <a href="simulasi.html" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Buka Simulasi Peta Kursi
+          </a>
+          <a href="profil.html" class="btn btn-secondary">
+            Lihat Analisis Rumus NIM &rarr;
+          </a>
+        </div>
+      </section>
+
+      <!-- 4 Stat Metric Cards (Grid Responsive) -->
+      <section class="grid-4" style="margin-bottom: 2rem;">
+        <div class="stat-card">
+          <span class="label">Kapasitas Studio</span>
+          <span class="value">48 Kursi</span>
+          <span class="desc">Matriks 6 Baris (A-F) &times; 8 Kolom</span>
+        </div>
+        <div class="stat-card">
+          <span class="label">Seed Dataset</span>
+          <span class="value">29</span>
+          <span class="desc">Harga Dasar: Rp 49.500 | FLM-2901</span>
+        </div>
+        <div class="stat-card">
+          <span class="label">Aturan Utama</span>
+          <span class="value">3 Aturan</span>
+          <span class="desc">Lonjakan +50%, Keadilan, Tenggat 180s</span>
+        </div>
+        <div class="stat-card">
+          <span class="label">Solusi &amp; Risiko</span>
+          <span class="value">2 Alternatif</span>
+          <span class="desc">Urut Risiko Rendah &rarr; Tinggi (D=1)</span>
+        </div>
+      </section>
+
+      <!-- Panel Fitur Unggulan (M6: ol, ul) -->
+      <section class="card-panel" id="fitur-unggulan">
+        <div class="panel-header">
+          <div class="panel-title-group">
+            <div class="icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <div>
+              <h3>Arsitektur Logika &amp; Urutan Prioritas Keputusan</h3>
+              <p>Mekanisme penanganan konflik kepentingan saat kapasitas baris favorit bioskop padat</p>
+            </div>
+          </div>
+        </div>
+
+        <h4>Urutan Prioritas Aturan Secara Eksplisit (M6: Ordered List):</h4>
+        <ol class="custom-ol">
+          <li><strong>Prioritas 1 &mdash; Integritas Kapasitas &amp; Anti Pemesanan Ganda:</strong> Sistem mengunci status kursi yang sudah dipesan (<em>booked</em>) dan menolak transaksi jika ada tumpang-tindih kursi.</li>
+          <li><strong>Prioritas 2 &mdash; Pemerataan &amp; Keadilan Alokasi (Fairness Score &bull; B=2):</strong> Sistem menghitung bobot simetri terhadap titik tengah layar (Kolom 4 &amp; 5) agar sudut pandang penonton tetap nyaman dan merata.</li>
+          <li><strong>Prioritas 3 &mdash; Kedekatan Kursi (Contiguity):</strong> Mengupayakan seluruh rombongan duduk bersebelahan tanpa terpisah lorong jalan atau baris lain.</li>
+          <li><strong>Prioritas 4 &mdash; Tenggat Waktu Ketat (Holding Timer &bull; C=2):</strong> Countdown reservasi 180 detik (3 menit) untuk menjamin kursi tidak ditahan sepihak saat jam favorit.</li>
+        </ol>
+
+        <h4>Keunggulan Rekayasa Sistem (M6: Unordered List):</h4>
+        <ul class="custom-ul">
+          <li><strong>100% Client-Side Engine:</strong> Berjalan mandiri langsung di browser tanpa dependensi backend eksternal, memudahkan demo langsung di depan dosen penguji.</li>
+          <li><strong>Peta Kursi Interaktif 6x8:</strong> Visualisasi denah bioskop real-time dengan pembedaan status warna kursi yang jelas.</li>
+          <li><strong>Tiga Skenario Pengujian Resmi:</strong> Skenario Normal, Skenario Konflik Kapasitas, dan Skenario Validasi Input Tidak Valid beserta rekomendasi perbaikannya.</li>
+          <li><strong>Estetika Midnight Premiere:</strong> Desain modern human-crafted (Anti-AI) dengan tipografi tajam, palet slate navy, dan aksen gold bioskop.</li>
+        </ul>
+      </section>
+
+      <!-- Glosarium Istilah Bioskop (M6: Definition List <dl>) -->
+      <section class="card-panel" id="glosarium-bioskop">
+        <div class="panel-header">
+          <div class="panel-title-group">
+            <div class="icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+            </div>
+            <div>
+              <h3>Glosarium Istilah Keputusan Bioskop (M6: Definition List)</h3>
+              <p>Definisi terminologi operasional yang diterapkan di dalam simulator CineDecide Pro</p>
+            </div>
+          </div>
+        </div>
+
+        <dl class="custom-dl">
+          <dt>Anti Double-Booking</dt>
+          <dd>Mekanisme validasi ketat yang memverifikasi ketersediaan fisik kursi sebelum transaksi disetujui, mencegah dua penonton memesan kursi yang sama.</dd>
+
+          <dt>Contiguous Seating</dt>
+          <dd>Algoritma pemindaian kursi berdampingan dalam satu baris tanpa terpotong lorong (<em>aisle</em>) atau diselingi kursi milik penonton lain.</dd>
+
+          <dt>Fairness Score (B mod 3 = 2)</dt>
+          <dd>Metrik evaluasi 10-100 poin yang mengukur keadilan letak posisi penonton terhadap sumbu tengah layar (Kolom 4 dan Kolom 5).</dd>
+
+          <dt>Risk Level Ranking (D mod 2 = 1)</dt>
+          <dd>Sistem perankingan alternatif solusi dari risiko terendah (Low Risk: satu baris) hingga risiko tertinggi (High Risk: pemisahan baris/split).</dd>
+
+          <dt>Holding Countdown (C mod 3 = 2)</dt>
+          <dd>Timer pembatas reservasi selama 180 detik (3 menit) yang mengotomasi pembatalan penahanan kursi jika pembayaran tidak diselesaikan tepat waktu.</dd>
+        </dl>
+      </section>
+
+      <!-- Tautan Eksternal & Akademik (M5: Internal, External, Mailto) -->
+      <section class="card-panel" id="tautan-akademik">
+        <div class="panel-header">
+          <div class="panel-title-group">
+            <div class="icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </div>
+            <div>
+              <h3>Tautan Eksternal &amp; Informasi Akademik (M5)</h3>
+              <p>Referensi resmi kampus, direktori film, dan kontak penanggung jawab proyek</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="stat-card">
+            <span class="label">Website Resmi Kampus</span>
+            <span class="value" style="font-size: 1.1rem; margin-top: 0.3rem;">Universitas Pamulang</span>
+            <p class="desc" style="margin-top: 0.5rem;">
+              Portal akademik Yayasan Sasmita Jaya UNPAM.
+              <br><br>
+              <a href="https://unpam.ac.id" target="_blank" rel="noopener noreferrer">&rarr; Buka Website UNPAM (Eksternal)</a>
+            </p>
+          </div>
+
+          <div class="stat-card">
+            <span class="label">Database Sinema Global</span>
+            <span class="value" style="font-size: 1.1rem; margin-top: 0.3rem;">IMDb Cinema Portal</span>
+            <p class="desc" style="margin-top: 0.5rem;">
+              Referensi katalog rating &amp; durasi film bioskop.
+              <br><br>
+              <a href="https://www.imdb.com" target="_blank" rel="noopener noreferrer">&rarr; Buka Direktori IMDb (Eksternal)</a>
+            </p>
+          </div>
+
+          <div class="stat-card">
+            <span class="label">Kontak Pengembang Proyek</span>
+            <span class="value" style="font-size: 1.1rem; margin-top: 0.3rem;">Mahasiswa UNPAM</span>
+            <p class="desc" style="margin-top: 0.5rem;">
+              Email resmi konsultasi dan pengujian proyek.
+              <br><br>
+              <a href="mailto:241011401829@mahasiswa.unpam.ac.id">&rarr; Kirim Email (mailto:)</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Footer Semantik (M13 Layout DIV) -->
+  <footer class="main-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <p>&copy; 2026 <strong>CineDecide Pro</strong> &bull; Proyek Akhir Pemrograman Web 1 (Soal Undian 13)</p>
+        <p style="font-size: 0.78rem; margin-top: 0.2rem;">Program Studi Teknik Informatika, Fakultas Ilmu Komputer, Universitas Pamulang.</p>
+      </div>
+      <div class="footer-right">
+        <span>NIM: <strong>241011401829</strong></span>
+        <span>Seed: <strong>29</strong></span>
+        <span>Sidebar: <strong>Kiri (E=0)</strong></span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+

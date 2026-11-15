@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil &amp; Aturan NIM - CineDecide Pro</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/images/cinema_logo.svg">
+</head>
+
+<body>
+
+  <!-- Header Semantik (M13 Layout DIV) -->
+  <header class="main-header">
+    <div class="brand-wrapper">
+      <div class="brand-logo-icon">C</div>
+      <div class="brand-text">
+        <h1>CineDecide Pro</h1>
+        <span>Sistem Keputusan Bioskop &bull; Soal Undian 13</span>
+      </div>
+    </div>
+    <div class="header-meta">
+      <div class="badge-nim">
+        <span class="badge-live-pulse"></span>
+        NIM: <strong>241011401829</strong>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Container: Sidebar Kiri (E mod 2 = 0) + Konten -->
+  <div class="page-container">
+
+    <!-- Sidebar KIRI (E=0 Wajib) -->
+    <aside class="sidebar-left">
+      <div>
+        <div class="sidebar-section-title">Navigasi Utama</div>
+        <nav class="sidebar-nav">
+          <ul>
+            <li>
+              <a href="index.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                  <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+                Beranda
+              </a>
+            </li>
+            <li>
+              <a href="profil.html" class="active">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+                Profil &amp; Aturan NIM
+              </a>
+            </li>
+            <li>
+              <a href="katalog.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="18" height="18" x="3" y="3" rx="2" />
+                  <path d="M3 9h18" />
+                  <path d="M9 21V9" />
+                </svg>
+                Data &amp; Katalog Film
+              </a>
+            </li>
+            <li>
+              <a href="multimedia.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="23 7 16 12 23 17 23 7" />
+                  <rect width="14" height="14" x="1" y="5" rx="2" />
+                </svg>
+                Galeri Multimedia
+              </a>
+            </li>
+            <li>
+              <a href="simulasi.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                  <polyline points="14 2 14 8 20 8" />
+                  <path d="M8 13h8" />
+                  <path d="M8 17h8" />
+                  <path d="M8 9h2" />
+                </svg>
+                Form Simulasi
+              </a>
+            </li>
+            <li>
+              <a href="evaluasi.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                Hasil &amp; Evaluasi
+              </a>
+            </li>
+            <li>
+              <a href="frame_demo.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="18" height="18" x="3" y="3" rx="2" />
+                  <path d="M3 9h18" />
+                  <path d="M3 15h18" />
+                  <path d="M9 3v18" />
+                </svg>
+                Demo Frameset (M9)
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="sidebar-info-card">
+        <h4>Variasi NIM: 241011401829</h4>
+        <p>Parameter Soal Undian 13</p>
+        <div class="meta-pill-list">
+          <div class="meta-pill"><span>A mod 3 = 0</span><span>Lonjakan (+50%)</span></div>
+          <div class="meta-pill"><span>B mod 3 = 2</span><span>Fairness/Keadilan</span></div>
+          <div class="meta-pill"><span>C mod 3 = 2</span><span>Tenggat 180s</span></div>
+          <div class="meta-pill"><span>D mod 2 = 1</span><span>Urut Risiko</span></div>
+          <div class="meta-pill"><span>E mod 2 = 0</span><span>Sidebar Kiri</span></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Konten Utama (M13) -->
+    <main class="main-content">
+
+      <!-- Profil Mahasiswa Panel -->
+      <section class="card-panel highlight-border">
+        <div class="panel-header">
+          <div class="panel-title-group">
+            <div class="icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </div>
+            <div>
+              <h2>Profil Mahasiswa &amp; Lembar Penugasan</h2>
+              <p>Identitas akademik pengembang proyek akhir Pemrograman Web 1 Universitas Pamulang</p>
+            </div>
+          </div>
+          <span class="badge badge-primary">Soal Undian 13</span>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <table class="data-table">
+              <tbody>
+                <tr>
+                  <th style="width: 170px;">Nama Mahasiswa</th>
+                  <td><strong>Andhika Prayogi Teknik Informatika UNPAM</strong></td>
+                </tr>
+                <tr>
+                  <th>Nomor Induk (NIM)</th>
+                  <td><mark
+                      style="background: rgba(245, 158, 11, 0.2); color: #F59E0B; padding: 2px 6px; border-radius: 4px;"><strong>241011401829</strong></mark>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Program Studi</th>
+                  <td>Teknik Informatika (S-1)</td>
+                </tr>
+                <tr>
+                  <th>Fakultas</th>
+                  <td>Fakultas Ilmu Komputer</td>
+                </tr>
+                <tr>
+                  <th>Perguruan Tinggi</th>
+                  <td>Universitas Pamulang (Yayasan Sasmita Jaya)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div>
+            <table class="data-table">
+              <tbody>
+                <tr>
+                  <th style="width: 170px;">Mata Kuliah</th>
+                  <td>Pemrograman Web 1</td>
+                </tr>
+                <tr>
+                  <th>Kode Penugasan</th>
+                  <td><strong>Proyek Akhir &bull; Soal Undian 13</strong></td>
+                </tr>
+                <tr>
+                  <th>Topik Studi Kasus</th>
+                  <td>Sistem Simulasi Keputusan Bidang Bioskop</td>
+                </tr>
+                <tr>
+                  <th>Format Pengumpulan</th>
+                  <td><code>241011401829_MahasiswaUNPAM_Soal13.zip</code></td>
+                </tr>
+                <tr>
+                  <th>Target Nilai</th>
+                  <td><span class="badge badge-success">Maksimal (100 Poin)</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Rincian Ekstraksi 5-Digit NIM & Kalkulasi Modulo -->
+      <section class="card-panel">
+        <div class="panel-header">
+          <div class="panel-title-group">
+            <div class="icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect width="18" height="18" x="3" y="3" rx="2" />
+                <path d="M7 10h10" />
+                <path d="M12 7v10" />
+              </svg>
+            </div>
+            <div>
+              <h3>Kalkulasi Variasi NIM: 241011401829 (Tentang Proyek)</h3>
+              <p>Perhitungan digit dari kanan ke kiri sesuai pedoman resmi lembar soal undian</p>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Berdasarkan instruksi lembar soal, digunakan <strong>5 digit terakhir NIM dari kanan</strong>:
+          <br>
+          NIM Mahasiswa: <code>2 4 1 0 1 1 4 <strong>0 1 8 2 9</strong></code>
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Variabel</th>
+                <th>Posisi Digit</th>
+                <th>Nilai Digit</th>
+                <th>Operasi Modulo</th>
+                <th>Hasil</th>
+                <th>Aturan Kasus Bioskop yang Ditetapkan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>A</strong></td>
+                <td>Digit Terakhir (ke-1 dari kanan)</td>
+                <td><strong style="color: #F59E0B; font-size: 1.1rem;">9</strong></td>
+                <td><code>9 mod 3</code></td>
+                <td><span class="badge badge-primary">0</span></td>
+                <td>
+                  <strong>Lonjakan Permintaan (Kuantitas +50%):</strong>
+                  Saat skenario lonjakan diaktifkan, permintaan kursi melonjak +50% (misal pesan 4 kursi &rarr;
+                  disimulasikan 6 kursi) untuk menguji ketahanan kapasitas baris studio.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>B</strong></td>
+                <td>Digit ke-2 dari kanan</td>
+                <td><strong style="color: #F59E0B; font-size: 1.1rem;">2</strong></td>
+                <td><code>2 mod 3</code></td>
+                <td><span class="badge badge-primary">2</span></td>
+                <td>
+                  <strong>Optimalkan Pemerataan / Keadilan (Fairness):</strong>
+                  Sistem wajib menjelaskan alasan urutan keputusan. Algoritma mengutamakan penempatan posisi kursi yang
+                  seimbang menuju titik tengah layar (Kolom 4 &amp; 5) dan tidak menumpuk di sisi sayap ekstrim.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>C</strong></td>
+                <td>Digit ke-3 dari kanan</td>
+                <td><strong style="color: #F59E0B; font-size: 1.1rem;">8</strong></td>
+                <td><code>8 mod 3</code></td>
+                <td><span class="badge badge-primary">2</span></td>
+                <td>
+                  <strong>Tenggat Lebih Pendek (Holding Time 180 Detik):</strong>
+                  Diterapkan sebagai aturan nyata: waktu penahanan kursi (<em>seat holding buffer</em>) diperketat
+                  menjadi 3 menit (180 detik) via timer interaktif guna mencegah kursi tertahan di jam padat bioskop.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>D</strong></td>
+                <td>Digit ke-4 dari kanan</td>
+                <td><strong style="color: #F59E0B; font-size: 1.1rem;">1</strong></td>
+                <td><code>1 mod 2</code></td>
+                <td><span class="badge badge-primary">1</span></td>
+                <td>
+                  <strong>Urutkan Hasil Menurut Tingkat Risiko (Risk Level):</strong>
+                  Alternatif solusi disusun dari risiko terkecil (<em>Low Risk</em>: 10-25%), risiko sedang (<em>Medium
+                    Risk</em>: 35-55%), hingga risiko tinggi (<em>High Risk</em>: 65-85%).
+                </td>
+              </tr>
+              <tr>
+                <td><strong>E</strong></td>
+                <td>Digit ke-5 dari kanan</td>
+                <td><strong style="color: #F59E0B; font-size: 1.1rem;">0</strong></td>
+                <td><code>0 mod 2</code></td>
+                <td><span class="badge badge-primary">0</span></td>
+                <td>
+                  <strong>Tata Letak Navigasi (Layout DIV Semantik):</strong>
+                  Struktur antarmuka menggunakan <strong>Sidebar Kiri (Left Sidebar)</strong> dengan lebar 270px yang
+                  memuat seluruh menu dan indikator sistem.
+                </td>
+              </tr>
+              <tr class="row-highlight">
+                <td><strong>Seed</strong></td>
+                <td>2 Digit Terakhir NIM</td>
+                <td><strong style="color: #FFF; font-size: 1.1rem;">29</strong></td>
+                <td>N/A</td>
+                <td><span class="badge badge-success">29</span></td>
+                <td>
+                  <strong>Seed Dataset Bioskop Konsisten:</strong>
+                  Harga dasar tiket bioskop = Rp 35.000 + (29 &times; 500) = <strong>Rp 49.500</strong>.
+                  Penomoran dataset awal: <code>FLM-2901</code> s/d <code>FLM-2910</code>, Studio <code>STD-29A</code>.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Checklist Pemenuhan Kompetensi Akademik (M1 - M17) -->
+      <section class="card-panel">
+        <div class="panel-header">
+          <div class="panel-title-group">
+            <div class="icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <div>
+              <h3>Matriks Pemenuhan Kompetensi Wajib (M1 &ndash; M17)</h3>
+              <p>Verifikasi keterpenuhan seluruh standar kurikulum mata kuliah Pemrograman Web 1</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th style="width: 140px;">Modul Kuliah</th>
+                <th>Kompetensi yang Disyaratkan</th>
+                <th>Bukti Implementasi pada CineDecide Pro</th>
+                <th style="width: 110px;">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>M1 &ndash; M3</strong></td>
+                <td>Struktur HTML, heading, paragraf, format teks &amp; karakter khusus</td>
+                <td>Heading h1-h6, format strong, em, mark, small, del, entitas &copy;, &reg;, &bull;, &rarr;, &quot;
+                </td>
+                <td><span class="badge badge-success">Terpenuhi</span></td>
+              </tr>
+              <tr>
+                <td><strong>M4</strong></td>
+                <td>&ge; 5 Gambar, audio, dan video</td>
+                <td>5 poster film SVG lokal, 1 blueprint denah studio, audio jingle bioskop, video trailer interaktif
+                </td>
+                <td><span class="badge badge-success">Terpenuhi</span></td>
+              </tr>
+              <tr>
+                <td><strong>M5</strong></td>
+                <td>Tautan internal, eksternal, anchor, dan mailto:</td>
+                <td>Navigasi halaman .html, tautan IMDb &amp; UNPAM, jump anchor (#id), dan mailto: mahasiswa</td>
+                <td><span class="badge badge-success">Terpenuhi</span></td>
+              </tr>
+              <tr>
+                <td><strong>M6</strong></td>
+                <td>List: ordered list (ol), unordered list (ul), definition list (dl)</td>
+                <td>Daftar urutan prioritas (&lt;ol&gt;), daftar fitur (&lt;ul&gt;), glosarium istilah bioskop
+                  (&lt;dl&gt;)</td>
+                <td><span class="badge badge-success">Terpenuhi</span></td>
+              </tr>
+              <tr>
+                <td><strong>M7</strong></td>
+                <td>Tabel &ge; 10 baris, th/td, colspan, rowspan</td>
+                <td>Katalog jadwal penayangan film bioskop 10 baris lengkap dengan colspan dan rowspan di katalog.html
+                </td>
+                <td><span class="badge badge-success">Terpenuhi</span></td>
+              </tr>
+              <tr>
+                <td><strong>M8</strong></td>
+                <td>Form: text, radio, checkbox, select, textarea, submit, reset</td>
+                <td>Formulir simulasi lengkap dengan seluruh elemen input form standar di simulasi.html</td>
+                <td><span class="badge badge-success">Terpenuhi</span></td>
+              </tr>
+              <tr>
+                <td><strong>M9</strong></td>
+                <td>Halaman demonstrasi frameset/frame terpisah (legacy)</td>
+                <td>Halaman <code>frame_demo.html</code> dengan &lt;frameset cols="260, *"&gt; dan sub-frame terpisah
+                </td>
+                <td><span class="badge badge-success">Terpenuhi</span></td>
+              </tr>
+              <tr>
+                <td><strong>M10</strong></td>
+                <td>Inline frame (iframe)</td>
+                <td>Penyematan trailer film dan dokumen bantuan via tag &lt;iframe&gt; di multimedia.html</td>
+                <td><span class="badge badge-success">Terpenuhi</span></td>
+              </tr>
+              <tr>
+                <td><strong>M11 &ndash; M12</strong></td>
+                <td>CSS eksternal, class, id, pseudo-class, font, margin, border/bg</td>
+                <td>File <code>css/style.css</code>: tema Midnight Premiere, :hover, :focus, :nth-child, custom fonts
+                </td>
+                <td><span class="badge badge-success">Terpenuhi</span></td>
+              </tr>
+              <tr>
+                <td><strong>M13</strong></td>
+                <td>Layout DIV semantik: header, sidebar kiri, konten, footer</td>
+                <td>DIV header fixed, sidebar kiri 270px (E=0), main content responsive, dan footer penutup</td>
+                <td><span class="badge badge-success">Terpenuhi</span></td>
+              </tr>
+              <tr>
+                <td><strong>M14 &ndash; M15</strong></td>
+                <td>JavaScript eksternal, variabel, tipe data, operator</td>
+                <td>File <code>js/dataset.js</code> &amp; <code>js/simulation.js</code>: const, let, array, object,
+                  operator</td>
+                <td><span class="badge badge-success">Terpenuhi</span></td>
+              </tr>
+              <tr>
+                <td><strong>M16</strong></td>
+                <td>Logika kontrol: if/else, switch, loop (for, while, forEach)</td>
+                <td>Validasi form, percabangan skenario konflik, switch case baris, dan loop penelusuran kursi</td>
+                <td><span class="badge badge-success">Terpenuhi</span></td>
+              </tr>
+              <tr>
+                <td><strong>M17</strong></td>
+                <td>&ge; 3 Function modular dan pemrosesan array</td>
+                <td>7 fungsi modular: initSeatMatrix, findContiguous, calculateFairness, calculateRisk, runDecision, dll
+                </td>
+                <td><span class="badge badge-success">Terpenuhi</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Footer Semantik (M13) -->
+  <footer class="main-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <p>&copy; 2026 <strong>CineDecide Pro</strong> &bull; Proyek Akhir Pemrograman Web 1 (Soal Undian 13)</p>
+        <p style="font-size: 0.78rem; margin-top: 0.2rem;">Program Studi Teknik Informatika, Fakultas Ilmu Komputer,
+          Universitas Pamulang.</p>
+      </div>
+      <div class="footer-right">
+        <span>NIM: <strong>241011401829</strong></span>
+        <span>Seed: <strong>29</strong></span>
+        <span>Sidebar: <strong>Kiri (E=0)</strong></span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

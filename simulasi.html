@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Simulasi Keputusan Bioskop - CineDecide Pro</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/images/cinema_logo.svg">
+</head>
+<body>
+
+  <!-- Header Semantik (M13 Layout DIV) -->
+  <header class="main-header">
+    <div class="brand-wrapper">
+      <div class="brand-logo-icon">C</div>
+      <div class="brand-text">
+        <h1>CineDecide Pro</h1>
+        <span>Sistem Keputusan Bioskop &bull; Soal Undian 13</span>
+      </div>
+    </div>
+    <div class="header-meta">
+      <div class="badge-nim">
+        <span class="badge-live-pulse"></span>
+        NIM: <strong>241011401829</strong>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Container: Sidebar Kiri (E=0) + Main Content -->
+  <div class="page-container">
+    
+    <!-- Sidebar KIRI (E=0 Wajib) -->
+    <aside class="sidebar-left">
+      <div>
+        <div class="sidebar-section-title">Navigasi Utama</div>
+        <nav class="sidebar-nav">
+          <ul>
+            <li>
+              <a href="index.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                Beranda
+              </a>
+            </li>
+            <li>
+              <a href="profil.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                Profil &amp; Aturan NIM
+              </a>
+            </li>
+            <li>
+              <a href="katalog.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                Data &amp; Katalog Film
+              </a>
+            </li>
+            <li>
+              <a href="multimedia.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect width="14" height="14" x="1" y="5" rx="2"/></svg>
+                Galeri Multimedia
+              </a>
+            </li>
+            <li>
+              <a href="simulasi.html" class="active">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M8 13h8"/><path d="M8 17h8"/><path d="M8 9h2"/></svg>
+                Form Simulasi
+              </a>
+            </li>
+            <li>
+              <a href="evaluasi.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                Hasil &amp; Evaluasi
+              </a>
+            </li>
+            <li>
+              <a href="frame_demo.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/></svg>
+                Demo Frameset (M9)
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Countdown Timer Box (C mod 3 = 2) -->
+      <div class="sidebar-info-card" style="border-color: rgba(245, 158, 11, 0.4); text-align: center;">
+        <h4>Tenggat Waktu Reservasi</h4>
+        <p style="font-size: 0.75rem;">Aturan C mod 3 = 2 (180 Detik)</p>
+        <div id="holdingCountdownTimer" style="font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; color: #F59E0B; margin: 0.4rem 0;">
+          03:00
+        </div>
+        <p style="font-size: 0.72rem; color: #94A3B8;">Kursi otomatis dilepas jika transaksi tidak diselesaikan.</p>
+      </div>
+
+      <div class="sidebar-info-card">
+        <h4>Pintasan 3 Skenario Uji</h4>
+        <p>Klik untuk muat instan:</p>
+        <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+          <button type="button" id="btnPresetNormal" class="btn btn-secondary" style="padding: 0.4rem; font-size: 0.75rem;">
+            1. Skenario Normal
+          </button>
+          <button type="button" id="btnPresetConflict" class="btn btn-secondary" style="padding: 0.4rem; font-size: 0.75rem; border-color: rgba(245, 158, 11, 0.4);">
+            2. Skenario Konflik (+50%)
+          </button>
+          <button type="button" id="btnPresetInvalid" class="btn btn-secondary" style="padding: 0.4rem; font-size: 0.75rem; border-color: rgba(244, 63, 94, 0.4);">
+            3. Skenario Input Invalid
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Konten Utama (M13) -->
+    <main class="main-content">
+      
+      <!-- Panel Header Simulasi -->
+      <section class="card-panel highlight-border">
+        <div class="panel-header">
+          <div class="panel-title-group">
+            <div class="icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M8 13h8"/><path d="M8 17h8"/><path d="M8 9h2"/></svg>
+            </div>
+            <div>
+              <h2>Formulir Simulasi Alokasi Kursi Bioskop</h2>
+              <p>Mencegah Pemesanan Ganda &bull; Kelompok Kursi Berdekatan &bull; Evaluasi 3 Aturan Konflik (M8, M14-M17)</p>
+            </div>
+          </div>
+          <span class="badge badge-primary">Interactive Simulator</span>
+        </div>
+
+        <p>
+          Silakan lengkapi formulir simulasi di bawah ini atau gunakan tombol skenario cepat. Anda juga dapat 
+          <strong>mengklik langsung kursi pada peta bioskop</strong> di sebelah kanan untuk mengubah status kursi menjadi terisi (<em>booked</em>) 
+          secara manual guna menguji ketahanan algoritma saat menghadapi kapasitas padat.
+        </p>
+      </section>
+
+      <!-- Layout 2 Kolom: Kiri Formulir (M8), Kanan Peta Kursi 6x8 -->
+      <div class="grid-2">
+        
+        <!-- KOLOM KIRI: FORMULIR INPUT LENGKAP (M8) -->
+        <section class="card-panel">
+          <div class="panel-header">
+            <div class="panel-title-group">
+              <div class="icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+              </div>
+              <div>
+                <h3>Parameter Pemesanan (M8)</h3>
+                <p>Formulir controls lengkap standar HTML5</p>
+              </div>
+            </div>
+          </div>
+
+          <form id="simulationForm" onsubmit="event.preventDefault();">
+            
+            <!-- 1. Text Input: Nama Pemesan -->
+            <div class="form-group">
+              <label class="form-label" for="customerName">
+                1. Nama Pemesan / Rombongan: <span style="color: #F43F5E;">*</span>
+              </label>
+              <input type="text" id="customerName" name="customerName" class="form-control" placeholder=" " required value=" ">
+              <span class="form-hint">Digunakan untuk identitas alokasi tiket resmi</span>
+            </div>
+
+            <!-- 1B. Dropdown Pilihan Film Bioskop (Seed 29) -->
+            <div class="form-group">
+              <label class="form-label" for="movieSelect">
+                2. Pilihan Judul Film Bioskop (Katalog Seed 29):
+              </label>
+              <select id="movieSelect" name="movieSelect" class="form-select">
+                <option value="FLM-2901" data-title="3726 MDPL: Ekspedisi Rinjani" data-studio="Studio 1 (Premiere VIP)" data-price="64500" selected>FLM-2901: 3726 MDPL: Ekspedisi Rinjani (Premiere - Rp 64.500)</option>
+                <option value="FLM-2902" data-title="Bila Esok Ibu Tiada" data-studio="Studio 3 (Reguler Deluxe)" data-price="49500">FLM-2902: Bila Esok Ibu Tiada (Reguler - Rp 49.500)</option>
+                <option value="FLM-2903" data-title="Gladiator II" data-studio="Studio 2 (IMAX Laser 3D)" data-price="69500">FLM-2903: Gladiator II (IMAX 3D - Rp 69.500)</option>
+                <option value="FLM-2904" data-title="Kang Mak from Pee Mak" data-studio="Studio 1 (Premiere VIP)" data-price="64500">FLM-2904: Kang Mak from Pee Mak (Premiere - Rp 64.500)</option>
+                <option value="FLM-2905" data-title="Lembayung: Poliklinik Angker" data-studio="Studio 2 (IMAX Laser 2D)" data-price="69500">FLM-2905: Lembayung: Poliklinik Angker (IMAX 2D - Rp 69.500)</option>
+                <option value="FLM-2906" data-title="Moana 2: The Ocean Journey" data-studio="Studio 3 (Reguler Deluxe)" data-price="49500">FLM-2906: Moana 2 (Reguler - Rp 49.500)</option>
+                <option value="FLM-2907" data-title="Wicked: Defying Gravity" data-studio="Studio 2 (IMAX 70mm)" data-price="74500">FLM-2907: Wicked: Defying Gravity (IMAX 70mm - Rp 74.500)</option>
+                <option value="FLM-2908" data-title="Santet Segoro Pitu" data-studio="Studio 3 (Reguler Deluxe)" data-price="49500">FLM-2908: Santet Segoro Pitu (Reguler - Rp 49.500)</option>
+                <option value="FLM-2909" data-title="Sekawan Limo: Mitos Madyopuro" data-studio="Studio 1 (Premiere VIP)" data-price="64500">FLM-2909: Sekawan Limo (Premiere - Rp 64.500)</option>
+                <option value="FLM-2910" data-title="Petaka Gunung Gede" data-studio="Studio 3 (Digital 3D)" data-price="54500">FLM-2910: Petaka Gunung Gede (Digital 3D - Rp 54.500)</option>
+              </select>
+              <span class="form-hint">Pilih dari 10 dataset film aktif berawalan kode Seed 29</span>
+            </div>
+
+            <!-- 2. Radio Button: Pilihan Studio -->
+            <div class="form-group">
+              <label class="form-label">3. Tipe Studio Penayangan (Radio Button):</label>
+              <div class="radio-group">
+                <label class="custom-option">
+                  <input type="radio" name="studioType" value="STD-29A" checked>
+                  <span>Studio 1 (Premiere VIP &bull; STD-29A)</span>
+                </label>
+                <label class="custom-option">
+                  <input type="radio" name="studioType" value="STD-29B">
+                  <span>Studio 2 (IMAX 3D &bull; STD-29B)</span>
+                </label>
+                <label class="custom-option">
+                  <input type="radio" name="studioType" value="STD-29C">
+                  <span>Studio 3 (Reguler Deluxe &bull; STD-29C)</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- 3. Number Input & Select Dropdown: Jumlah & Preferensi Baris -->
+            <div class="grid-2" style="gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label" for="ticketCount">
+                  3. Jumlah Penonton: <span style="color: #F43F5E;">*</span>
+                </label>
+                <input type="number" id="ticketCount" name="ticketCount" class="form-control" min="1" max="10" value="4" required>
+                <span class="form-hint">Batas maksimal: 10 kursi / transaksi</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="preferredRow">
+                  4. Preferensi Baris (Select):
+                </label>
+                <select id="preferredRow" name="preferredRow" class="form-select">
+                  <option value="A">Baris A (Paling Dekat Layar)</option>
+                  <option value="B">Baris B (Depan)</option>
+                  <option value="C" selected>Baris C (Tengah Depan)</option>
+                  <option value="D">Baris D (Baris Emas / Sweet Spot VIP)</option>
+                  <option value="E">Baris E (Tengah Belakang)</option>
+                  <option value="F">Baris F (Paling Belakang)</option>
+                </select>
+                <span class="form-hint">Baris utama yang diincar rombongan</span>
+              </div>
+            </div>
+
+            <!-- 4. Checkbox Group: 3 Aturan Khusus Variasi NIM -->
+            <div class="form-group">
+              <label class="form-label">5. Aturan Logika Khusus (Checkbox):</label>
+              <div class="checkbox-group" style="flex-direction: column; align-items: flex-start; gap: 0.6rem;">
+                <label class="custom-option">
+                  <input type="checkbox" id="enableSurge" name="enableSurge">
+                  <span><strong>Lonjakan Permintaan (+50% Penonton)</strong> &bull; Variasi A mod 3 = 0</span>
+                </label>
+                <label class="custom-option">
+                  <input type="checkbox" id="enableFairness" name="enableFairness" checked>
+                  <span><strong>Optimalkan Pemerataan / Keadilan Posisi</strong> &bull; Variasi B mod 3 = 2</span>
+                </label>
+                <label class="custom-option">
+                  <input type="checkbox" id="enableStrictTimeout" name="enableStrictTimeout" checked>
+                  <span><strong>Tenggat Waktu Pendek (Holding Time 180s)</strong> &bull; Variasi C mod 3 = 2</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- 5. Textarea: Catatan Khusus Penonton -->
+            <div class="form-group">
+              <label class="form-label" for="bookingNotes">6. Catatan Khusus Rombongan (Textarea):</label>
+              <textarea id="bookingNotes" name="bookingNotes" class="form-textarea" rows="2" placeholder="Catatan preferensi tambahan (misal: membawa lansia, ingin dekat lorong jalan)...">Rombongan keluarga menginginkan kursi berdampingan tanpa terpisah.</textarea>
+            </div>
+
+            <!-- 6. Tombol Submit & Reset (M8) -->
+            <div class="btn-row">
+              <button type="submit" id="btnSubmitSimulation" class="btn btn-primary" style="flex: 1;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                Jalankan Simulasi Keputusan
+              </button>
+              <button type="reset" id="btnResetSimulation" class="btn btn-secondary">
+                Reset Form
+              </button>
+            </div>
+
+          </form>
+        </section>
+
+        <!-- KOLOM KANAN: PETA VISUAL KURSI BIOSKOP 6x8 -->
+        <section class="card-panel">
+          <div class="panel-header">
+            <div class="panel-title-group">
+              <div class="icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+              </div>
+              <div>
+                <h3>Peta Kursi Bioskop 6&times;8 (48 Kursi)</h3>
+                <p>Klik kursi untuk memilih &bull; Kuota terkunci sesuai jumlah tiket</p>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+              <span id="seatSelectionCounter" class="badge badge-primary" style="font-size: 0.82rem; padding: 0.35rem 0.75rem;">
+                Dipilih: 0 / 4 Kursi
+              </span>
+              <button type="button" id="btnToggleMode" class="btn btn-secondary" style="padding: 0.35rem 0.65rem; font-size: 0.72rem;" title="Klik untuk beralih mode simulasi dosen">
+                Mode: Pilih Kursi
+              </button>
+              <button type="button" id="btnClearSeats" class="btn btn-secondary" style="padding: 0.35rem 0.65rem; font-size: 0.72rem;">
+                Reset Peta
+              </button>
+            </div>
+          </div>
+
+          <!-- Layar Bioskop Curved -->
+          <div class="cinema-screen-container">
+            <div class="screen-bar"></div>
+            <span class="screen-label">&bull; LAYAR UTAMA STUDIO (SCREEN) &bull;</span>
+          </div>
+
+          <!-- Container Grid Kursi Dinamis -->
+          <div id="seatMapGrid" class="seat-grid-wrapper">
+            <!-- Kursi di-generate secara dinamis oleh js/simulation.js -->
+          </div>
+
+          <!-- Legenda Warna Kursi -->
+          <div class="seat-legend">
+            <div class="legend-item">
+              <div class="legend-sample" style="background: var(--seat-avail); border: 1px solid #334155;"></div>
+              <span>Tersedia</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-sample" style="background: rgba(225, 29, 72, 0.3); border: 1px solid #E11D48;"></div>
+              <span>Terisi (Booked)</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-sample" style="background: var(--accent-gold); border: 1px solid #D97706;"></div>
+              <span>Hasil Alokasi</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-sample" style="background: rgba(6, 182, 212, 0.4); border: 1px solid #06B6D4;"></div>
+              <span>Alternatif</span>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Live Quick Decision Summary Banner -->
+      <section id="quickResultSection" class="card-panel highlight-border" style="display: none; margin-top: 1.5rem;">
+        <div class="panel-header">
+          <div class="panel-title-group">
+            <div class="icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <h3>Ringkasan Keputusan Alokasi Sistem</h3>
+              <p>Hasil evaluasi in-memory real-time</p>
+            </div>
+          </div>
+          <span id="resultScenarioBadge" class="badge badge-success">Status: Normal</span>
+        </div>
+
+        <div id="quickResultContent">
+          <!-- Diisi otomatis oleh JavaScript -->
+        </div>
+
+        <div class="btn-row" style="margin-top: 1.25rem;">
+          <button type="button" id="btnConfirmAndTicket" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Konfirmasi Pesanan &amp; Cetak E-Tiket
+          </button>
+          <a href="evaluasi.html" class="btn btn-secondary">
+            Lihat Analisis Alternatif Lengkap &amp; Evaluasi Risiko &rarr;
+          </a>
+        </div>
+      </section>
+
+      <!-- TABEL RIWAYAT TRANSAKSI PEMESANAN (ORDER HISTORY) -->
+      <section class="card-panel highlight-border" style="margin-top: 2rem;">
+        <div class="panel-header">
+          <div class="panel-title-group">
+            <div class="icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <div>
+              <h3>Tabel Riwayat Pemesanan Tiket Bioskop (Real-Time)</h3>
+              <p>Daftar nama orang yang telah memesan tiket &bull; Data tersimpan otomatis di memori browser (Seed 29)</p>
+            </div>
+          </div>
+          <button type="button" id="btnResetHistory" class="btn btn-secondary" style="padding: 0.35rem 0.75rem; font-size: 0.75rem;">
+            Reset Riwayat Pesanan
+          </button>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th style="width: 100px;">ID Tiket</th>
+                <th>Nama Pemesan &amp; Waktu</th>
+                <th>Judul Film &amp; Studio</th>
+                <th style="width: 130px;">Kursi Terkunci</th>
+                <th style="width: 120px;">Total Biaya</th>
+                <th style="width: 110px;">Status Risiko</th>
+                <th style="width: 140px; text-align: center;">Aksi E-Tiket</th>
+              </tr>
+            </thead>
+            <tbody id="orderHistoryTableBody">
+              <!-- Baris riwayat dirender secara dinamis oleh js/simulation.js -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Footer Semantik (M13) -->
+  <footer class="main-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <p>&copy; 2026 <strong>CineDecide Pro</strong> &bull; Proyek Akhir Pemrograman Web 1 (Soal Undian 13)</p>
+        <p style="font-size: 0.78rem; margin-top: 0.2rem;">Program Studi Teknik Informatika, Fakultas Ilmu Komputer, Universitas Pamulang.</p>
+      </div>
+      <div class="footer-right">
+        <span>NIM: <strong>241011401829</strong></span>
+        <span>Seed: <strong>29</strong></span>
+        <span>Sidebar: <strong>Kiri (E=0)</strong></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/dataset.js"></script>
+  <script src="js/simulation.js"></script>
+  <script>
+    // State Mode Interaktif: false = Mode Pemesan (Pilih Kursi Emas), true = Mode Dosen (Tandai Merah)
+    let isDosenOccupyMode = false;
+    let currentLastResult = null;
+
+    // Fungsi Update Badge Counter Kuota Kursi Real-Time
+    function updateSeatSelectionBadge() {
+      const ticketCountInput = document.getElementById("ticketCount");
+      const targetCount = parseInt(ticketCountInput ? ticketCountInput.value : 4, 10) || 1;
+      const counterBadge = document.getElementById("seatSelectionCounter");
+      if (!counterBadge) return;
+
+      if (isDosenOccupyMode) {
+        counterBadge.className = "badge badge-danger";
+        counterBadge.textContent = `Mode Dosen: ${occupiedSeats.size} Kursi Terisi`;
+      } else {
+        const currentSelected = selectedSeats.size;
+        if (currentSelected === targetCount) {
+          counterBadge.className = "badge badge-success";
+          counterBadge.textContent = `Lengkap: ${currentSelected} / ${targetCount} Kursi Terpilih`;
+        } else if (currentSelected > targetCount) {
+          counterBadge.className = "badge badge-danger";
+          counterBadge.textContent = `Kelebihan: ${currentSelected} / ${targetCount} Kursi`;
+        } else {
+          counterBadge.className = "badge badge-primary";
+          counterBadge.textContent = `Dipilih: ${currentSelected} / ${targetCount} Kursi`;
+        }
+      }
+    }
+
+    // Callback Interaktif: Klik Kursi pada Denah 6x8
+    function handleSeatClick(seatCode) {
+      if (isDosenOccupyMode) {
+        // Mode Dosen: Simulasi Kursi Terisi / Booked (Merah)
+        if (occupiedSeats.has(seatCode)) {
+          occupiedSeats.delete(seatCode);
+          showToast(`Kursi ${seatCode} diubah menjadi TERSEDIA.`, "info");
+        } else {
+          occupiedSeats.add(seatCode);
+          selectedSeats.delete(seatCode);
+          showToast(`Kursi ${seatCode} ditandai TERISI (Booked) untuk simulasi.`, "warning");
+        }
+        sessionStorage.setItem("cine_occupied_seats", JSON.stringify(Array.from(occupiedSeats)));
+        initSeatMatrix(Array.from(occupiedSeats));
+        updateSeatSelectionBadge();
+        renderSeatGrid("seatMapGrid", handleSeatClick, true);
+        return;
+      }
+
+      // Mode Pemesan (Default):
+      // 1. Cek apakah kursi sudah terisi orang lain (Merah)
+      if (occupiedSeats.has(seatCode)) {
+        showToast(`Kursi ${seatCode} sudah terisi (booked) oleh penonton lain!`, "error");
+        return;
+      }
+
+      // 2. Cek apakah kursi sudah dipilih sebelumnya (Emas) -> batalkan pilihan
+      if (selectedSeats.has(seatCode)) {
+        selectedSeats.delete(seatCode);
+        const ticketCount = parseInt(document.getElementById("ticketCount").value, 10) || 1;
+        showToast(`Kursi ${seatCode} dibatalkan (${selectedSeats.size} dari ${ticketCount} kursi).`, "info");
+        updateSeatSelectionBadge();
+        renderSeatGrid("seatMapGrid", handleSeatClick);
+        return;
+      }
+
+      // 3. Cek batas kuota pemilihan (Sesuai Jumlah Penonton di Form)
+      const ticketCount = parseInt(document.getElementById("ticketCount").value, 10) || 1;
+      if (selectedSeats.size >= ticketCount) {
+        showToast(`Batas kuota tercapai! Jumlah penonton adalah ${ticketCount}, Anda hanya dapat memilih maksimal ${ticketCount} kursi.`, "warning");
+        return;
+      }
+
+      // 4. Tambahkan ke kursi terpilih (Emas)
+      selectedSeats.add(seatCode);
+      showToast(`Kursi ${seatCode} berhasil dipilih (${selectedSeats.size} dari ${ticketCount} kursi).`, "success");
+      updateSeatSelectionBadge();
+      renderSeatGrid("seatMapGrid", handleSeatClick);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Inisialisasi Riwayat Pesanan
+      initOrderHistory();
+      renderOrderHistoryTable("orderHistoryTableBody");
+
+      // Sinkronkan kursi terisi hanya dari transaksi resmi yang ada di riwayat
+      const activeBookedFromOrders = [];
+      orderHistory.forEach(o => {
+        if (o.seats && Array.isArray(o.seats)) {
+          activeBookedFromOrders.push(...o.seats);
+        }
+      });
+      // Bersihkan sisa klik kursi merah uji coba lama, hanya gunakan kursi dari tiket resmi
+      occupiedSeats = new Set(activeBookedFromOrders);
+      sessionStorage.setItem("cine_occupied_seats", JSON.stringify(Array.from(occupiedSeats)));
+
+      initSeatMatrix(Array.from(occupiedSeats));
+      updateSeatSelectionBadge();
+      renderSeatGrid("seatMapGrid", handleSeatClick);
+
+      // Jalankan Holding Countdown Timer (C mod 3 = 2)
+      startHoldingTimer("holdingCountdownTimer", () => {
+        showToast("Waktu reservasi 180 detik telah habis! Silakan lakukan simulasi ulang.", "warning");
+      });
+
+      // Listener perubahan Jumlah Penonton di Input Form
+      const ticketCountInput = document.getElementById("ticketCount");
+      if (ticketCountInput) {
+        ticketCountInput.addEventListener("input", () => {
+          const newMax = parseInt(ticketCountInput.value, 10) || 1;
+          if (selectedSeats.size > newMax) {
+            const arr = Array.from(selectedSeats);
+            selectedSeats = new Set(arr.slice(0, newMax));
+            showToast(`Jumlah penonton diset ${newMax}. Kursi dipilih disesuaikan ke ${selectedSeats.size} kursi.`, "info");
+            renderSeatGrid("seatMapGrid", handleSeatClick);
+          }
+          updateSeatSelectionBadge();
+        });
+      }
+
+      // Listener Tombol Sakelar Mode Dosen vs Pemesan
+      const btnToggleMode = document.getElementById("btnToggleMode");
+      if (btnToggleMode) {
+        btnToggleMode.addEventListener("click", () => {
+          isDosenOccupyMode = !isDosenOccupyMode;
+          if (isDosenOccupyMode) {
+            btnToggleMode.textContent = "Mode: Dosen (Isi Merah)";
+            btnToggleMode.className = "btn btn-danger";
+            showToast("Mode Dosen Aktif: Klik kursi untuk menandai TERISI (Merah).", "warning");
+          } else {
+            btnToggleMode.textContent = "Mode: Pilih Kursi (Emas)";
+            btnToggleMode.className = "btn btn-secondary";
+            showToast("Mode Pemesan Aktif: Klik kursi untuk MEMILIH (Emas) sesuai kuota.", "info");
+          }
+          updateSeatSelectionBadge();
+          renderSeatGrid("seatMapGrid", handleSeatClick, isDosenOccupyMode);
+        });
+      }
+    });
+
+    // Tombol Set Default Kursi / Reset Peta
+    document.getElementById("btnClearSeats").addEventListener("click", () => {
+      occupiedSeats.clear();
+      selectedSeats.clear();
+      sessionStorage.removeItem("cine_occupied_seats");
+      initSeatMatrix([]);
+      updateSeatSelectionBadge();
+      renderSeatGrid("seatMapGrid", handleSeatClick);
+      showToast("Peta kursi berhasil direset total. Seluruh 48 kursi kembali kosong!", "info");
+    });
+
+    // Reset Riwayat Pesanan
+    document.getElementById("btnResetHistory").addEventListener("click", () => {
+      localStorage.removeItem("cine_order_history");
+      sessionStorage.removeItem("cine_occupied_seats");
+      occupiedSeats.clear();
+      selectedSeats.clear();
+      initOrderHistory();
+      initSeatMatrix([]);
+      updateSeatSelectionBadge();
+      renderSeatGrid("seatMapGrid", handleSeatClick);
+      renderOrderHistoryTable("orderHistoryTableBody");
+      showToast("Riwayat pemesanan dikosongkan. Seluruh 48 kursi kembali tersedia.", "info");
+    });
+
+    // Aksi Pembatalan Tiket dari Baris Tabel
+    window.cancelBookingAction = function(ticketId) {
+      deleteOrderFromHistory(ticketId);
+      initSeatMatrix(Array.from(occupiedSeats));
+      updateSeatSelectionBadge();
+      renderSeatGrid("seatMapGrid", handleSeatClick);
+      renderOrderHistoryTable("orderHistoryTableBody");
+    };
+
+    // Eksekusi Simulasi Saat Form Disubmit
+    const form = document.getElementById("simulationForm");
+    form.addEventListener("submit", () => {
+      const customerName = document.getElementById("customerName").value;
+      const movieSelect = document.getElementById("movieSelect");
+      const selectedOption = movieSelect.options[movieSelect.selectedIndex];
+      const movieTitle = selectedOption.getAttribute("data-title") || "3726 MDPL: Ekspedisi Rinjani";
+      const studioName = selectedOption.getAttribute("data-studio") || "Studio 1 (Premiere VIP)";
+      const pricePerTicket = parseInt(selectedOption.getAttribute("data-price"), 10) || 64500;
+
+      const ticketCount = parseInt(document.getElementById("ticketCount").value, 10);
+      const preferredRow = document.getElementById("preferredRow").value;
+      const enableSurge = document.getElementById("enableSurge").checked;
+      const enableFairness = document.getElementById("enableFairness").checked;
+
+      // Cek apakah pemesan sudah memilih kursi manual di peta sesuai jumlah penonton
+      let manualChosenSeats = null;
+      if (selectedSeats.size === ticketCount && !enableSurge) {
+        manualChosenSeats = Array.from(selectedSeats);
+      }
+
+      const inputPayload = {
+        customerName: customerName,
+        movieTitle: movieTitle,
+        studioName: studioName,
+        pricePerTicket: pricePerTicket,
+        ticketCount: ticketCount,
+        preferredRow: preferredRow,
+        enableSurge: enableSurge,
+        enableFairness: enableFairness,
+        manualSeats: manualChosenSeats
+      };
+
+      const result = runDecisionSimulation(inputPayload);
+      currentLastResult = {
+        result: result,
+        input: inputPayload
+      };
+
+      displayQuickResult(result);
+
+      // Jika alokasi kursi sukses, otomatis masukkan nama & data pemesan ke Tabel Riwayat!
+      if (result.isValid) {
+        let allocatedSeats = [];
+        let riskText = "Low Risk";
+        let fairnessVal = 80;
+
+        if (result.primarySolution) {
+          allocatedSeats = result.primarySolution.seats;
+          riskText = result.primarySolution.risk.category;
+          fairnessVal = result.primarySolution.fairnessScore;
+        } else if (result.alternatives && result.alternatives.length > 0) {
+          allocatedSeats = result.alternatives[0].seats;
+          riskText = result.alternatives[0].risk.category;
+          fairnessVal = result.alternatives[0].fairnessScore;
+        }
+
+        if (allocatedSeats.length > 0) {
+          const newOrder = addOrderToHistory({
+            customerName: customerName,
+            movieTitle: movieTitle,
+            studioName: studioName,
+            pricePerTicket: pricePerTicket,
+            seats: allocatedSeats,
+            fairnessScore: fairnessVal,
+            riskCategory: riskText
+          });
+
+          // Re-render tabel riwayat & update peta
+          renderOrderHistoryTable("orderHistoryTableBody");
+          initSeatMatrix(Array.from(occupiedSeats));
+          selectedSeats.clear(); // Bersihkan seleksi manual setelah berhasil dikunci ke tiket
+          updateSeatSelectionBadge();
+          renderSeatGrid("seatMapGrid", handleSeatClick);
+
+          showToast(`Data "${customerName}" berhasil ditambahkan ke Riwayat Tiket (${newOrder.ticketId})!`, "success");
+        }
+      }
+    });
+
+    // Tombol Konfirmasi Pesanan & Cetak E-Tiket Modal
+    document.getElementById("btnConfirmAndTicket").addEventListener("click", () => {
+      if (orderHistory.length > 0) {
+        // Tampilkan tiket paling atas (pesanan terkini)
+        openETicketModal(orderHistory[0].ticketId);
+      } else {
+        showToast("Belum ada tiket yang terbit. Silakan submit formulir terlebih dahulu.", "warning");
+      }
+    });
+
+    // Tampilkan Hasil Cepat di Bawah Formulir
+    function displayQuickResult(result) {
+      const section = document.getElementById("quickResultSection");
+      const badge = document.getElementById("resultScenarioBadge");
+      const content = document.getElementById("quickResultContent");
+
+      section.style.display = "block";
+      selectedSeats.clear();
+
+      if (!result.isValid) {
+        badge.className = "badge badge-danger";
+        badge.textContent = "Validasi Gagal (Input Invalid)";
+
+        content.innerHTML = `
+          <div class="decision-banner status-danger">
+            <div>
+              <strong>Peringatan Input Tidak Valid (Skenario 3):</strong>
+              <p>${result.conflictReasons.join("<br>")}</p>
+              <p style="margin-top: 0.5rem; font-weight: 600;">Rekomendasi Perbaikan: ${result.recommendedAction}</p>
+            </div>
+          </div>
+        `;
+        showToast("Input tidak valid: " + result.conflictReasons[0], "error");
+        updateSeatSelectionBadge();
+        renderSeatGrid("seatMapGrid", handleSeatClick);
+        return;
+      }
+
+      if (result.scenarioType === "NORMAL" || result.scenarioType === "SURGE_NORMAL") {
+        badge.className = "badge badge-success";
+        badge.textContent = result.surgeApplied ? "Sukses (Dengan Lonjakan +50%)" : "Sukses (Solusi Utama)";
+
+        result.primarySolution.seats.forEach(s => selectedSeats.add(s));
+
+        content.innerHTML = `
+          <div class="decision-banner status-success">
+            <div>
+              <strong>Solusi Utama Diterapkan &bull; Kursi Berdampingan:</strong>
+              <p>Alokasi Kursi: <strong style="color: #FFF; font-size: 1.1rem;">${result.primarySolution.seats.join(", ")}</strong> (Baris ${result.preferredRow})</p>
+              <p>${result.primarySolution.explanation}</p>
+              <p style="margin-top: 0.4rem; font-size: 0.82rem;">
+                Fairness Score: <strong>${result.primarySolution.fairnessScore}/100</strong> &bull; 
+                Tingkat Risiko: <strong>${result.primarySolution.risk.category} (${result.primarySolution.risk.score}%)</strong>
+              </p>
+            </div>
+          </div>
+        `;
+        showToast("Alokasi kursi berdampingan berhasil ditemukan!", "success");
+      } else {
+        // Kasus Konflik / Keterbatasan
+        badge.className = "badge badge-primary";
+        badge.textContent = "Konflik Terdeteksi &bull; 2 Alternatif Solusi Tersedia";
+
+        // Tandai alternatif pertama di visual map
+        if (result.alternatives.length > 0) {
+          result.alternatives[0].seats.forEach(s => selectedSeats.add(s));
+        }
+
+        let altsHtml = "";
+        result.alternatives.forEach(alt => {
+          altsHtml += `
+            <div class="alternative-card">
+              <div class="alternative-header">
+                <strong style="color: #F59E0B;">${alt.title}</strong>
+                <span class="badge ${alt.risk.score < 50 ? 'badge-info' : 'badge-danger'}">
+                  ${alt.risk.category} (${alt.risk.score}%)
+                </span>
+              </div>
+              <p>Kursi yang Ditawarkan: <strong style="color: #FFF;">${alt.seats.join(", ")}</strong></p>
+              <p style="font-size: 0.85rem; color: #94A3B8;">${alt.explanation}</p>
+            </div>
+          `;
+        });
+
+        content.innerHTML = `
+          <div class="decision-banner status-warning">
+            <div>
+              <strong>Pencegahan Pemesanan Ganda &amp; Konflik Kapasitas (Skenario 2):</strong>
+              <p>${result.conflictReasons.join("<br>")}</p>
+              <p style="margin-top: 0.4rem; font-weight: 600;">Sistem menyajikan minimal 2 alternatif solusi yang diurutkan menurut tingkat risiko (D mod 2 = 1):</p>
+            </div>
+          </div>
+          <div style="margin-top: 1rem;">
+            ${altsHtml}
+          </div>
+        `;
+        showToast("Baris pilihan penuh! Menampilkan 2 alternatif solusi terurut risiko.", "warning");
+      }
+
+      updateSeatSelectionBadge();
+      renderSeatGrid("seatMapGrid", handleSeatClick);
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+
+    // Event Listener untuk 3 Tombol Pintasan Skenario Pengujian Resmi
+    document.getElementById("btnPresetNormal").addEventListener("click", () => {
+      document.getElementById("customerName").value = "Ahmad Faisal";
+      document.getElementById("ticketCount").value = "3";
+      document.getElementById("preferredRow").value = "C";
+      document.getElementById("enableSurge").checked = false;
+      selectedSeats.clear();
+      // Pastikan kursi C1, C2, C3 kosong
+      ["C1", "C2", "C3"].forEach(s => occupiedSeats.delete(s));
+      initSeatMatrix(Array.from(occupiedSeats));
+      updateSeatSelectionBadge();
+      renderSeatGrid("seatMapGrid", handleSeatClick);
+      form.dispatchEvent(new Event("submit"));
+      showToast("Skenario 1 (Normal) dimuat.", "info");
+    });
+
+    document.getElementById("btnPresetConflict").addEventListener("click", () => {
+      document.getElementById("customerName").value = "Rombongan Komunitas Film";
+      document.getElementById("ticketCount").value = "4";
+      document.getElementById("preferredRow").value = "D";
+      document.getElementById("enableSurge").checked = true; // Lonjakan +50% -> 6 kursi
+      selectedSeats.clear();
+      // Isi sebagian besar baris D agar tersisa 3 kursi saja (memaksa konflik)
+      ["D1", "D2", "D3", "D4", "D5"].forEach(s => occupiedSeats.add(s));
+      initSeatMatrix(Array.from(occupiedSeats));
+      updateSeatSelectionBadge();
+      renderSeatGrid("seatMapGrid", handleSeatClick);
+      form.dispatchEvent(new Event("submit"));
+      showToast("Skenario 2 (Konflik Kapasitas + Lonjakan) dimuat.", "warning");
+    });
+
+    document.getElementById("btnPresetInvalid").addEventListener("click", () => {
+      document.getElementById("customerName").value = "";
+      document.getElementById("ticketCount").value = "15"; // Melebihi batas 10
+      selectedSeats.clear();
+      updateSeatSelectionBadge();
+      form.dispatchEvent(new Event("submit"));
+      showToast("Skenario 3 (Input Tidak Valid) dimuat.", "error");
+    });
+
+    // Reset Form
+    document.getElementById("btnResetSimulation").addEventListener("click", () => {
+      selectedSeats.clear();
+      updateSeatSelectionBadge();
+      renderSeatGrid("seatMapGrid", handleSeatClick);
+      document.getElementById("quickResultSection").style.display = "none";
+      showToast("Formulir dan seleksi kursi berhasil direset.", "info");
+    });
+  </script>
+
+</body>
+</html>
+

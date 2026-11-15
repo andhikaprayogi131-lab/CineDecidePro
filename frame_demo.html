@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Demonstrasi Frameset Legacy (M9) - CineDecide Pro</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/cinema_logo.svg">
+</head>
+
+<!-- Halaman Khusus Pemenuhan Modul 9: Frameset / Frame Terpisah (Legacy) -->
+<frameset rows="64, *" border="1" frameborder="1" framespacing="2">
+  <!-- Frame Atas: Header Informasi Mahasiswa & NIM -->
+  <frame src="frame_header.html" name="headerFrame" scrolling="no" noresize="noresize" title="Frame Header Bioskop">
+  
+  <!-- Frameset Baris Bawah: Terbagi 2 Kolom (Sidebar Kiri 250px + Konten Kanan) -->
+  <frameset cols="250, *" border="1" frameborder="1" framespacing="2">
+    <frame src="frame_sidebar.html" name="sidebarFrame" scrolling="auto" title="Frame Navigasi Sidebar">
+    <frame src="frame_content.html" name="contentFrame" scrolling="auto" title="Frame Konten Utama">
+  </frameset>
+
+  <!-- Fallback untuk Browser yang Menonaktifkan Frameset -->
+  <noframes>
+    <body>
+      <div style="font-family: sans-serif; padding: 30px; text-align: center;">
+        <h2>Peramban Anda Tidak Mendukung Tag Frameset HTML Legacy</h2>
+        <p>Halaman ini dirancang untuk mendemonstrasikan sintaks modul kuliah M9 (frameset/frame terpisah).</p>
+        <p><a href="index.html" style="color: #F59E0B; font-weight: bold;">Klik di sini untuk membuka Versi Beranda Modern DIV Semantik &rarr;</a></p>
+      </div>
+    </body>
+  </noframes>
+</frameset>
+</html>
+
