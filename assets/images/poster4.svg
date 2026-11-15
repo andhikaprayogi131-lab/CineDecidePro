@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="400" height="600">
+  <defs>
+    <linearGradient id="spookyTeal" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#041E1E"/>
+      <stop offset="45%" stop-color="#064E3B"/>
+      <stop offset="80%" stop-color="#022C22"/>
+      <stop offset="100%" stop-color="#021410"/>
+    </linearGradient>
+    <radialGradient id="paleMoon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FEF9C3" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#A7F3D0" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#064E3B" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Sky Canvas -->
+  <rect width="400" height="600" fill="url(#spookyTeal)"/>
+
+  <!-- Eerie Pale Full Moon -->
+  <circle cx="200" cy="210" r="110" fill="url(#paleMoon)"/>
+  <circle cx="200" cy="210" r="50" fill="#FEF9C3" opacity="0.9"/>
+
+  <!-- Spooky Bare Trees Silhouette -->
+  <path d="M 40,480 Q 70,360 85,320 L 75,300 M 85,320 L 105,290" stroke="#011812" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 350,480 Q 320,350 310,310 L 325,290 M 310,310 L 290,285" stroke="#011812" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Traditional Wooden Stilt Village House Silhouette -->
+  <polygon points="120,400 200,340 280,400 260,400 260,490 140,490 140,400" fill="#021A13"/>
+  <!-- Stilts & Windows -->
+  <line x1="150" y1="490" x2="150" y2="530" stroke="#01120D" stroke-width="6"/>
+  <line x1="180" y1="490" x2="180" y2="530" stroke="#01120D" stroke-width="6"/>
+  <line x1="220" y1="490" x2="220" y2="530" stroke="#01120D" stroke-width="6"/>
+  <line x1="250" y1="490" x2="250" y2="530" stroke="#01120D" stroke-width="6"/>
+  <rect x="180" y="415" width="40" height="40" rx="3" fill="#FEF08A" opacity="0.7"/>
+
+  <!-- Ground & Fog -->
+  <path d="M 0,510 Q 200,480 400,510 L 400,600 L 0,600 Z" fill="#010F0A"/>
+  <path d="M 0,540 Q 150,520 400,540 L 400,600 L 0,600 Z" fill="#000705"/>
+
+  <!-- Typography -->
+  <g text-anchor="middle">
+    <text x="200" y="90" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#A7F3D0" letter-spacing="4">DARI PRODUSEN FILM BOX OFFICE</text>
+    <text x="200" y="145" font-family="'Space Grotesk', sans-serif" font-size="38" font-weight="900" fill="#FFFFFF" letter-spacing="3">KANG MAK</text>
+    <text x="200" y="175" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" fill="#F59E0B" letter-spacing="3">FROM PEE MAK</text>
+
+    <!-- Seed & Info -->
+    <rect x="140" y="275" width="120" height="22" rx="4" fill="#000" stroke="#34D399" stroke-width="1"/>
+    <text x="200" y="290" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#6EE7B7">SEED: FLM-2904</text>
+
+    <!-- Specs Footer -->
+    <text x="200" y="555" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#F8FAFC" letter-spacing="1">HOROR • KOMEDI • REMAJA (R13+)</text>
+    <text x="200" y="575" font-family="sans-serif" font-size="10" fill="#94A3B8" letter-spacing="1">STUDIO 1 PREMIERE • DOLBY ATMOS 2D • CINEDECIDE</text>
+  </g>
+</svg>

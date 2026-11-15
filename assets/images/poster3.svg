@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="400" height="600">
+  <defs>
+    <linearGradient id="colosseumNight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0F0906"/>
+      <stop offset="40%" stop-color="#261208"/>
+      <stop offset="80%" stop-color="#451A03"/>
+      <stop offset="100%" stop-color="#7C2D12"/>
+    </linearGradient>
+    <radialGradient id="emberGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F97316" stop-opacity="0.8"/>
+      <stop offset="70%" stop-color="#EA580C" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#7C2D12" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Sky Canvas -->
+  <rect width="400" height="600" fill="url(#colosseumNight)"/>
+  <circle cx="200" cy="270" r="160" fill="url(#emberGlow)"/>
+
+  <!-- Colosseum Silhouette Arches -->
+  <g fill="#1A0D06">
+    <rect x="50" y="310" width="300" height="180" rx="10"/>
+    <!-- Colosseum arch cutouts -->
+    <ellipse cx="90" cy="350" rx="14" ry="24" fill="url(#colosseumNight)"/>
+    <ellipse cx="130" cy="350" rx="14" ry="24" fill="url(#colosseumNight)"/>
+    <ellipse cx="170" cy="350" rx="14" ry="24" fill="url(#colosseumNight)"/>
+    <ellipse cx="210" cy="350" rx="14" ry="24" fill="url(#colosseumNight)"/>
+    <ellipse cx="250" cy="350" rx="14" ry="24" fill="url(#colosseumNight)"/>
+    <ellipse cx="290" cy="350" rx="14" ry="24" fill="url(#colosseumNight)"/>
+    <ellipse cx="110" cy="410" rx="14" ry="22" fill="url(#colosseumNight)"/>
+    <ellipse cx="150" cy="410" rx="14" ry="22" fill="url(#colosseumNight)"/>
+    <ellipse cx="190" cy="410" rx="14" ry="22" fill="url(#colosseumNight)"/>
+    <ellipse cx="230" cy="410" rx="14" ry="22" fill="url(#colosseumNight)"/>
+    <ellipse cx="270" cy="410" rx="14" ry="22" fill="url(#colosseumNight)"/>
+  </g>
+
+  <!-- Roman Gladius Sword Silhouette in Center -->
+  <g transform="translate(195, 120)">
+    <!-- Pommel & Hilt -->
+    <circle cx="5" cy="5" r="7" fill="#F59E0B"/>
+    <rect x="2" y="12" width="6" height="24" fill="#D97706"/>
+    <rect x="-16" y="36" width="42" height="7" rx="3" fill="#F59E0B"/>
+    <!-- Blade -->
+    <polygon points="-8,43 18,43 8,190 5,205 2,190" fill="#E2E8F0"/>
+    <line x1="5" y1="43" x2="5" y2="185" stroke="#94A3B8" stroke-width="1.5"/>
+  </g>
+
+  <!-- Typography -->
+  <g text-anchor="middle">
+    <text x="200" y="80" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#FBBF24" letter-spacing="6">RIDLEY SCOTT SAGA</text>
+    <text x="200" y="375" font-family="'Space Grotesk', sans-serif" font-size="38" font-weight="900" fill="#FFFFFF" letter-spacing="6">GLADIATOR</text>
+    <text x="200" y="420" font-family="'Space Grotesk', sans-serif" font-size="34" font-weight="900" fill="#F59E0B" letter-spacing="4">II</text>
+
+    <!-- Seed & Info -->
+    <rect x="140" y="445" width="120" height="22" rx="4" fill="#000" stroke="#F59E0B" stroke-width="1"/>
+    <text x="200" y="460" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#FDE68A">SEED: FLM-2903</text>
+
+    <!-- Specs Footer -->
+    <text x="200" y="555" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#F8FAFC" letter-spacing="1">ACTION • SEJARAH EPIC • DEWASA (D17+)</text>
+    <text x="200" y="575" font-family="sans-serif" font-size="10" fill="#E2E8F0" letter-spacing="1">STUDIO 2 IMAX • IMAX LASER 3D • CINEDECIDE</text>
+  </g>
+</svg>

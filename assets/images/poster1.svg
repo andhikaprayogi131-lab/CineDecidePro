@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="400" height="600">
+  <defs>
+    <!-- Background Gradient: Sunrise at Summit -->
+    <linearGradient id="skyRinjani" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0A1128"/>
+      <stop offset="40%" stop-color="#1C2541"/>
+      <stop offset="70%" stop-color="#47123A"/>
+      <stop offset="90%" stop-color="#C84B31"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+
+    <!-- Mountain Layer Gradients -->
+    <linearGradient id="peakBack" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2D1B36"/>
+      <stop offset="100%" stop-color="#190F24"/>
+    </linearGradient>
+
+    <linearGradient id="peakMid" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1C1427"/>
+      <stop offset="100%" stop-color="#0E0A17"/>
+    </linearGradient>
+
+    <linearGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FDE68A" stop-opacity="0.95"/>
+      <stop offset="40%" stop-color="#F59E0B" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#D97706" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky Canvas -->
+  <rect width="400" height="600" fill="url(#skyRinjani)"/>
+
+  <!-- Morning Sun Rising behind the Crater -->
+  <circle cx="200" cy="280" r="90" fill="url(#sunGlow)"/>
+  <circle cx="200" cy="280" r="38" fill="#FEF3C7" opacity="0.9"/>
+
+  <!-- Topographic Elevation Lines (Contour Lines) -->
+  <path d="M 0,220 Q 100,205 200,240 T 400,210" fill="none" stroke="#FDE68A" stroke-width="0.8" opacity="0.25"/>
+  <path d="M 0,250 Q 120,230 200,270 T 400,240" fill="none" stroke="#FDE68A" stroke-width="0.8" opacity="0.2"/>
+  <path d="M 0,280 Q 90,265 200,300 T 400,275" fill="none" stroke="#FDE68A" stroke-width="0.8" opacity="0.15"/>
+
+  <!-- Stars in Morning Twilight -->
+  <circle cx="65" cy="50" r="1.5" fill="#FFF" opacity="0.8"/>
+  <circle cx="120" cy="90" r="1.2" fill="#FFF" opacity="0.6"/>
+  <circle cx="310" cy="60" r="1.8" fill="#FDE68A" opacity="0.9"/>
+  <circle cx="350" cy="110" r="1.2" fill="#FFF" opacity="0.7"/>
+
+  <!-- Distant Mountain Ranges (Layer 1) -->
+  <polygon points="-20,380 90,300 170,340 280,260 380,350 420,380 420,600 -20,600" fill="url(#peakBack)" opacity="0.95"/>
+
+  <!-- Mid Ridge & Summit (Layer 2) -->
+  <polygon points="-20,430 70,360 140,400 230,310 320,380 420,420 420,600 -20,600" fill="url(#peakMid)"/>
+
+  <!-- Foreground High Ridge & Crater Silhouette (Layer 3) -->
+  <path d="M -10,480 Q 80,440 180,470 L 260,420 Q 320,460 410,440 L 410,600 L -10,600 Z" fill="#050308"/>
+
+  <!-- Hiker on the Summit Ridge Silhouette -->
+  <g transform="translate(258, 395) scale(0.65)" fill="#FBBF24">
+    <!-- Backpacker figure -->
+    <ellipse cx="10" cy="8" rx="3.5" ry="4"/> <!-- Head -->
+    <path d="M 7,12 L 13,12 L 14,26 L 6,26 Z"/> <!-- Torso -->
+    <rect x="2" y="13" width="5" height="10" rx="2" fill="#F59E0B"/> <!-- Backpack -->
+    <line x1="6" y1="26" x2="3" y2="38" stroke="#FBBF24" stroke-width="2.5"/> <!-- Leg 1 -->
+    <line x1="14" y1="26" x2="17" y2="38" stroke="#FBBF24" stroke-width="2.5"/> <!-- Leg 2 -->
+    <line x1="16" y1="16" x2="22" y2="38" stroke="#FEF3C7" stroke-width="1.8"/> <!-- Trekking pole -->
+  </g>
+
+  <!-- Dramatic Typography -->
+  <g text-anchor="middle">
+    <!-- Official Elevation Tag -->
+    <rect x="110" y="75" width="180" height="24" rx="12" fill="#000" opacity="0.5" stroke="#F59E0B" stroke-width="1"/>
+    <text x="200" y="91" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="700" fill="#FBBF24" letter-spacing="2">PUNCAK ANJANI • 3.726 M</text>
+
+    <!-- Main Title -->
+    <text x="200" y="165" font-family="'Space Grotesk', sans-serif" font-size="44" font-weight="900" fill="#FFFFFF" letter-spacing="4">3726 MDPL</text>
+    
+    <!-- Subtitle -->
+    <text x="200" y="200" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="800" fill="#F59E0B" letter-spacing="5">EKSPEDISI RINJANI</text>
+
+    <!-- Genre & Seed Pill -->
+    <rect x="135" y="505" width="130" height="24" rx="4" fill="#0F172A" stroke="#F59E0B" stroke-width="1.2"/>
+    <text x="200" y="521" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#FDE68A" letter-spacing="1">SEED: FLM-2901</text>
+
+    <!-- Cinema Specs Footer -->
+    <text x="200" y="555" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#E2E8F0" letter-spacing="1.5">ADVENTURE • SURVIVAL • R13+</text>
+    <text x="200" y="575" font-family="sans-serif" font-size="10" fill="#94A3B8" letter-spacing="1">STUDIO 1 PREMIERE • DOLBY ATMOS 2D • CINEDECIDE</text>
+  </g>
+</svg>
